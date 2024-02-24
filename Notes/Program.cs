@@ -26,11 +26,12 @@ namespace Notes
             if (app.Environment.IsDevelopment())
             {
                 app.UseMigrationsEndPoint();
+                app.UseDeveloperExceptionPage();
             }
             else
             {
-                app.UseExceptionHandler("/Error");
-                // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
+                app.UseExceptionHandler("/Home/Error/500");
+                app.UseStatusCodePagesWithRedirects("/Home/Error?statusCode={0}");
                 app.UseHsts();
             }
 
@@ -41,6 +42,18 @@ namespace Notes
 
             app.UseAuthentication();
             app.UseAuthorization();
+
+            app.UseEndpoints(config =>
+            {
+                config.MapControllerRoute(
+                 name: "areas",
+                 pattern: "/{area:exists}/{controller=Home}/{action=Index}/{id?}"
+               );
+                config.MapControllerRoute(
+                             name: "default",
+                             pattern: "{controller=Home}/{action=Index}/{id?}");
+                config.MapRazorPages();
+            });
 
             app.MapRazorPages();
 
