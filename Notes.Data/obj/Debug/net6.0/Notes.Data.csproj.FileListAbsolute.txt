@@ -1,0 +1,17 @@
+C:\Users\ASUS\Desktop\Notes-ItKarieraProject\Notes-Project\Notes.Data\obj\Debug\net6.0\Notes.Data.csproj.AssemblyReference.cache
+C:\Users\ASUS\Desktop\Notes-ItKarieraProject\Notes-Project\Notes.Data\obj\Debug\net6.0\Notes.Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ASUS\Desktop\Notes-ItKarieraProject\Notes-Project\Notes.Data\obj\Debug\net6.0\Notes.Data.AssemblyInfoInputs.cache
+C:\Users\ASUS\Desktop\Notes-ItKarieraProject\Notes-Project\Notes.Data\obj\Debug\net6.0\Notes.Data.AssemblyInfo.cs
+C:\Users\ASUS\Desktop\Notes-ItKarieraProject\Notes-Project\Notes.Data\obj\Debug\net6.0\Notes.Data.csproj.CoreCompileInputs.cache
+C:\Users\ASUS\Desktop\Notes-ItKarieraProject\Notes-Project\Notes.Data\bin\Debug\net6.0\Notes.Data.deps.json
+C:\Users\ASUS\Desktop\Notes-ItKarieraProject\Notes-Project\Notes.Data\bin\Debug\net6.0\Notes.Data.dll
+C:\Users\ASUS\Desktop\Notes-ItKarieraProject\Notes-Project\Notes.Data\bin\Debug\net6.0\Notes.Data.pdb
+C:\Users\ASUS\Desktop\Notes-ItKarieraProject\Notes-Project\Notes.Data\bin\Debug\net6.0\Notes.Common.dll
+C:\Users\ASUS\Desktop\Notes-ItKarieraProject\Notes-Project\Notes.Data\bin\Debug\net6.0\Notes.Data.Models.dll
+C:\Users\ASUS\Desktop\Notes-ItKarieraProject\Notes-Project\Notes.Data\bin\Debug\net6.0\Notes.Common.pdb
+C:\Users\ASUS\Desktop\Notes-ItKarieraProject\Notes-Project\Notes.Data\bin\Debug\net6.0\Notes.Data.Models.pdb
+C:\Users\ASUS\Desktop\Notes-ItKarieraProject\Notes-Project\Notes.Data\obj\Debug\net6.0\Notes.Data.csproj.CopyComplete
+C:\Users\ASUS\Desktop\Notes-ItKarieraProject\Notes-Project\Notes.Data\obj\Debug\net6.0\Notes.Data.dll
+C:\Users\ASUS\Desktop\Notes-ItKarieraProject\Notes-Project\Notes.Data\obj\Debug\net6.0\refint\Notes.Data.dll
+C:\Users\ASUS\Desktop\Notes-ItKarieraProject\Notes-Project\Notes.Data\obj\Debug\net6.0\Notes.Data.pdb
+C:\Users\ASUS\Desktop\Notes-ItKarieraProject\Notes-Project\Notes.Data\obj\Debug\net6.0\ref\Notes.Data.dll

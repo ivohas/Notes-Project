@@ -955,6 +955,9 @@
       "Notes.Common/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "6.0.23"
+        },
         "compile": {
           "bin/placeholder/Notes.Common.dll": {}
         },
@@ -966,6 +969,8 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
+          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "6.0.23",
+          "Microsoft.EntityFrameworkCore.SqlServer": "6.0.23",
           "Notes.Common": "1.0.0",
           "Notes.Data.Models": "1.0.0"
         },
@@ -979,6 +984,9 @@
       "Notes.Data.Models/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "6.0.23"
+        },
         "compile": {
           "bin/placeholder/Notes.Data.Models.dll": {}
         },
@@ -990,6 +998,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
+          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "6.0.23",
           "Notes.Common": "1.0.0",
           "Notes.Data": "1.0.0",
           "Notes.Data.Models": "1.0.0"
@@ -1005,6 +1014,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
+          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "6.0.23",
           "Notes.Common": "1.0.0",
           "Notes.Data.Models": "1.0.0"
         },

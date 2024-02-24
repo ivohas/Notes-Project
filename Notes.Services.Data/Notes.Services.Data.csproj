@@ -7,6 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="6.0.23" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Notes.Common\Notes.Common.csproj" />
     <ProjectReference Include="..\Notes.Data.Models\Notes.Data.Models.csproj" />
     <ProjectReference Include="..\Notes.Data\Notes.Data.csproj" />

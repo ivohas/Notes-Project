@@ -1,0 +1,17 @@
+C:\Users\ASUS\Desktop\Notes-ItKarieraProject\Notes-Project\Notes.Web.ViewModels\bin\Debug\net6.0\Notes.Web.ViewModels.deps.json
+C:\Users\ASUS\Desktop\Notes-ItKarieraProject\Notes-Project\Notes.Web.ViewModels\bin\Debug\net6.0\Notes.Web.ViewModels.dll
+C:\Users\ASUS\Desktop\Notes-ItKarieraProject\Notes-Project\Notes.Web.ViewModels\bin\Debug\net6.0\Notes.Web.ViewModels.pdb
+C:\Users\ASUS\Desktop\Notes-ItKarieraProject\Notes-Project\Notes.Web.ViewModels\bin\Debug\net6.0\Notes.Common.dll
+C:\Users\ASUS\Desktop\Notes-ItKarieraProject\Notes-Project\Notes.Web.ViewModels\bin\Debug\net6.0\Notes.Data.Models.dll
+C:\Users\ASUS\Desktop\Notes-ItKarieraProject\Notes-Project\Notes.Web.ViewModels\bin\Debug\net6.0\Notes.Common.pdb
+C:\Users\ASUS\Desktop\Notes-ItKarieraProject\Notes-Project\Notes.Web.ViewModels\bin\Debug\net6.0\Notes.Data.Models.pdb
+C:\Users\ASUS\Desktop\Notes-ItKarieraProject\Notes-Project\Notes.Web.ViewModels\obj\Debug\net6.0\Notes.Web.ViewModels.csproj.AssemblyReference.cache
+C:\Users\ASUS\Desktop\Notes-ItKarieraProject\Notes-Project\Notes.Web.ViewModels\obj\Debug\net6.0\Notes.Web.ViewModels.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ASUS\Desktop\Notes-ItKarieraProject\Notes-Project\Notes.Web.ViewModels\obj\Debug\net6.0\Notes.Web.ViewModels.AssemblyInfoInputs.cache
+C:\Users\ASUS\Desktop\Notes-ItKarieraProject\Notes-Project\Notes.Web.ViewModels\obj\Debug\net6.0\Notes.Web.ViewModels.AssemblyInfo.cs
+C:\Users\ASUS\Desktop\Notes-ItKarieraProject\Notes-Project\Notes.Web.ViewModels\obj\Debug\net6.0\Notes.Web.ViewModels.csproj.CoreCompileInputs.cache
+C:\Users\ASUS\Desktop\Notes-ItKarieraProject\Notes-Project\Notes.Web.ViewModels\obj\Debug\net6.0\Notes.Web.ViewModels.csproj.CopyComplete
+C:\Users\ASUS\Desktop\Notes-ItKarieraProject\Notes-Project\Notes.Web.ViewModels\obj\Debug\net6.0\Notes.Web.ViewModels.dll
+C:\Users\ASUS\Desktop\Notes-ItKarieraProject\Notes-Project\Notes.Web.ViewModels\obj\Debug\net6.0\refint\Notes.Web.ViewModels.dll
+C:\Users\ASUS\Desktop\Notes-ItKarieraProject\Notes-Project\Notes.Web.ViewModels\obj\Debug\net6.0\Notes.Web.ViewModels.pdb
+C:\Users\ASUS\Desktop\Notes-ItKarieraProject\Notes-Project\Notes.Web.ViewModels\obj\Debug\net6.0\ref\Notes.Web.ViewModels.dll
