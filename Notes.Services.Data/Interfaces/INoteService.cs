@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Notes.Services.Data.Interfaces
 {
-    internal interface INoteService
+    public interface INoteService
     {
     }
 }
