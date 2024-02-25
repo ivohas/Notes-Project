@@ -3947,7 +3947,8 @@
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "6.0.23",
           "Notes.Common": "1.0.0",
           "Notes.Data": "1.0.0",
-          "Notes.Data.Models": "1.0.0"
+          "Notes.Data.Models": "1.0.0",
+          "Notes.Web.ViewModels": "1.0.0"
         },
         "compile": {
           "bin/placeholder/Notes.Services.Data.dll": {}

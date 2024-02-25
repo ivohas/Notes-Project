@@ -1,0 +1,37 @@
+﻿@using Notes.Web.ViewModels.Note;
+@model IEnumerable<NoteViewModel>
+<h2>List of Notes</h2>
+
+@if (Model.Any())
+{
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            <div class="col-md-4 mb-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">@item.Title</h5>
+                        <p class="card-text">@TruncateText(item.Content, 40)</p>
+                        <a href="@Url.Action("Details", "Note", new { id = item.Id })" class="btn btn-primary">Details</a>
+                        <button type="button" class="btn btn-danger">Delete</button>
+                        <button type="button" class="btn btn-warning">Pin</button>
+                        <button type="button" class="btn btn-info">Favorite</button>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+}
+else
+{
+    <p>No notes found.</p>
+}
+
+@functions {
+    string TruncateText(string text, int length)
+    {
+        if (text.Length <= length)
+            return text;
+        return text.Substring(0, length) + "...";
+    }
+}

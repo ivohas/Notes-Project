@@ -22,15 +22,16 @@ namespace Notes.Controllers
         }
 
         [HttpPost]
-        public IActionResult Create(NoteViewModel noteViewModel)
+        public async Task<IActionResult> Create(NoteViewModel noteViewModel)
         {
-            // Put the data in the db  
-            return RedirectToAction("Home", "Index");
+            await this._noteService.CreateNewNote(noteViewModel);
+            return RedirectToAction("All", "Note");
         }
         [HttpGet]
-        public IActionResult All() 
-        { 
-           return View();
+        public async Task<IActionResult> All()
+        {
+            List<NoteViewModel> allNotes = await this._noteService.GetAllMyNotes(this.GetUserId());
+            return View(allNotes);
         }
     }
 }

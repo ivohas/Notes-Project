@@ -11,7 +11,8 @@
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "6.0.23",
           "Notes.Common": "1.0.0",
           "Notes.Data": "1.0.0",
-          "Notes.Data.Models": "1.0.0"
+          "Notes.Data.Models": "1.0.0",
+          "Notes.Web.ViewModels": "1.0.0"
         },
         "runtime": {
           "Notes.Services.Data.dll": {}
@@ -548,6 +549,16 @@
         "runtime": {
           "Notes.Data.Models.dll": {}
         }
+      },
+      "Notes.Web.ViewModels/1.0.0": {
+        "dependencies": {
+          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "6.0.23",
+          "Notes.Common": "1.0.0",
+          "Notes.Data.Models": "1.0.0"
+        },
+        "runtime": {
+          "Notes.Web.ViewModels.dll": {}
+        }
       }
     }
   },
@@ -883,6 +894,11 @@
       "sha512": ""
     },
     "Notes.Data.Models/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Notes.Web.ViewModels/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

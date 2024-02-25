@@ -17,3 +17,5 @@ C:\Users\ASUS\Desktop\Notes-ItKarieraProject\Notes-Project\Notes.Services.Data\o
 C:\Users\ASUS\Desktop\Notes-ItKarieraProject\Notes-Project\Notes.Services.Data\obj\Debug\net6.0\refint\Notes.Services.Data.dll
 C:\Users\ASUS\Desktop\Notes-ItKarieraProject\Notes-Project\Notes.Services.Data\obj\Debug\net6.0\Notes.Services.Data.pdb
 C:\Users\ASUS\Desktop\Notes-ItKarieraProject\Notes-Project\Notes.Services.Data\obj\Debug\net6.0\ref\Notes.Services.Data.dll
+C:\Users\ASUS\Desktop\Notes-ItKarieraProject\Notes-Project\Notes.Services.Data\bin\Debug\net6.0\Notes.Web.ViewModels.dll
+C:\Users\ASUS\Desktop\Notes-ItKarieraProject\Notes-Project\Notes.Services.Data\bin\Debug\net6.0\Notes.Web.ViewModels.pdb

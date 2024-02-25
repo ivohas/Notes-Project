@@ -14,6 +14,7 @@
     <ProjectReference Include="..\Notes.Common\Notes.Common.csproj" />
     <ProjectReference Include="..\Notes.Data.Models\Notes.Data.Models.csproj" />
     <ProjectReference Include="..\Notes.Data\Notes.Data.csproj" />
+    <ProjectReference Include="..\Notes.Web.ViewModels\Notes.Web.ViewModels.csproj" />
   </ItemGroup>
 
 </Project>

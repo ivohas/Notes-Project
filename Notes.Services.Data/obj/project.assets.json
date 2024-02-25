@@ -861,6 +861,21 @@
         "runtime": {
           "bin/placeholder/Notes.Data.Models.dll": {}
         }
+      },
+      "Notes.Web.ViewModels/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "6.0.23",
+          "Notes.Common": "1.0.0",
+          "Notes.Data.Models": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Notes.Web.ViewModels.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Notes.Web.ViewModels.dll": {}
+        }
       }
     }
   },
@@ -2132,6 +2147,11 @@
       "type": "project",
       "path": "../Notes.Data.Models/Notes.Data.Models.csproj",
       "msbuildProject": "../Notes.Data.Models/Notes.Data.Models.csproj"
+    },
+    "Notes.Web.ViewModels/1.0.0": {
+      "type": "project",
+      "path": "../Notes.Web.ViewModels/Notes.Web.ViewModels.csproj",
+      "msbuildProject": "../Notes.Web.ViewModels/Notes.Web.ViewModels.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -2139,7 +2159,8 @@
       "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 6.0.23",
       "Notes.Common >= 1.0.0",
       "Notes.Data >= 1.0.0",
-      "Notes.Data.Models >= 1.0.0"
+      "Notes.Data.Models >= 1.0.0",
+      "Notes.Web.ViewModels >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -2182,6 +2203,9 @@
             },
             "C:\\Users\\ASUS\\Desktop\\Notes-ItKarieraProject\\Notes-Project\\Notes.Data\\Notes.Data.csproj": {
               "projectPath": "C:\\Users\\ASUS\\Desktop\\Notes-ItKarieraProject\\Notes-Project\\Notes.Data\\Notes.Data.csproj"
+            },
+            "C:\\Users\\ASUS\\Desktop\\Notes-ItKarieraProject\\Notes-Project\\Notes.Web.ViewModels\\Notes.Web.ViewModels.csproj": {
+              "projectPath": "C:\\Users\\ASUS\\Desktop\\Notes-ItKarieraProject\\Notes-Project\\Notes.Web.ViewModels\\Notes.Web.ViewModels.csproj"
             }
           }
         }
