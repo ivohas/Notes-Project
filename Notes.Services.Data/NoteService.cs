@@ -67,6 +67,21 @@ namespace Notes.Services.Data
                 }).ToListAsync();
             return myNotes;
         }
+
+        public async Task<NoteDetailsViewModel?> GetNoteDetailsByIdAsync(string id)
+        {
+            return await this._dbContext
+            .Notes
+            .Where(x => x.Id.ToString() == id)
+            .Select(x =>
+            new NoteDetailsViewModel
+            {
+                Id = x.Id.ToString(),
+                Content = x.Content,
+                CreatedOn = x.CreatedOn,
+                Title = x.Title
+            }).FirstOrDefaultAsync();
+        }
     }
 
 }

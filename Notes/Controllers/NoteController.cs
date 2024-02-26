@@ -17,6 +17,8 @@ namespace Notes.Controllers
         [HttpGet]
         public IActionResult Create()
         {
+
+            //TODO: add validation to the view model and in the db
             NoteViewModel noteViewModel = new NoteViewModel();
             return View(noteViewModel);
         }
@@ -46,6 +48,13 @@ namespace Notes.Controllers
             {
                 return StatusCode(500, "An error occurred while deleting the note.");
             }
+        }
+
+        public async Task<IActionResult> Details(string id) {
+
+            NoteDetailsViewModel? noteDetailsViewModel = await this._noteService.GetNoteDetailsByIdAsync(id);
+
+            return View(noteDetailsViewModel);
         }
     }
 }
