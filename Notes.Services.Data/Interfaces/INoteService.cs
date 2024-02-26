@@ -10,6 +10,7 @@ namespace Notes.Services.Data.Interfaces
     public interface INoteService
     {
         Task CreateNewNote(NoteViewModel noteViewModel);
+        Task DeleteNoteByIdAsync(string id);
         Task<List<Notes.Web.ViewModels.Note.NoteViewModel>> GetAllMyNotes(string? v);
     }
 }

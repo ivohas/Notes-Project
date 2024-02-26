@@ -22,13 +22,34 @@ namespace Notes.Services.Data
             {
                 Content = noteViewModel.Content,
                 Title = noteViewModel.Title,
-                Id = Guid.NewGuid(),
                 CreatedOn = DateTime.Now
             };
             // add author 
-            
+
             await this._dbContext.Notes.AddAsync(newNote);
             await this._dbContext.SaveChangesAsync();
+        }
+
+        public async Task DeleteNoteByIdAsync(string id)
+        {
+            var note = await _dbContext.Notes.FirstOrDefaultAsync(x => x.Id == Guid.Parse(id));
+
+            if (note == null)
+            {
+                return;
+            }
+
+            _dbContext.Entry(note).State = EntityState.Detached;
+            var existingNote = await _dbContext.Notes.FirstOrDefaultAsync(x => x.Id == Guid.Parse(id));
+
+            if (existingNote == null)
+            {
+                return;
+            }
+
+            _dbContext.Notes.Remove(existingNote);
+            await _dbContext.SaveChangesAsync();
+
         }
 
         public async Task<List<NoteViewModel>> GetAllMyNotes(string userId)
@@ -39,6 +60,7 @@ namespace Notes.Services.Data
                 .Where(x => x.Author.Id == userId)
                 .Select(x => new NoteViewModel
                 {
+                    Id = x.Id.ToString(),
                     Title = x.Title,
                     CreatedOn = DateTime.Now,
                     Content = x.Content

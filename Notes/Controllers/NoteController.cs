@@ -33,5 +33,19 @@ namespace Notes.Controllers
             List<NoteViewModel> allNotes = await this._noteService.GetAllMyNotes(this.GetUserId());
             return View(allNotes);
         }
+        [HttpPost]
+        public async Task<IActionResult> Delete(string id)
+        {
+            try
+            {
+               
+                await _noteService.DeleteNoteByIdAsync(id);
+                return RedirectToAction("All", "Note");
+            }
+            catch
+            {
+                return StatusCode(500, "An error occurred while deleting the note.");
+            }
+        }
     }
 }
