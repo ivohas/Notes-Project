@@ -10,3 +10,15 @@ C:\Users\ASUS\Desktop\Notes-ItKarieraProject\Notes-Project\Notes.Common\obj\Debu
 C:\Users\ASUS\Desktop\Notes-ItKarieraProject\Notes-Project\Notes.Common\obj\Debug\net6.0\refint\Notes.Common.dll
 C:\Users\ASUS\Desktop\Notes-ItKarieraProject\Notes-Project\Notes.Common\obj\Debug\net6.0\Notes.Common.pdb
 C:\Users\ASUS\Desktop\Notes-ItKarieraProject\Notes-Project\Notes.Common\obj\Debug\net6.0\ref\Notes.Common.dll
+D:\Desktop\New folder (2)\Notes.Common\bin\Debug\net6.0\Notes.Common.deps.json
+D:\Desktop\New folder (2)\Notes.Common\bin\Debug\net6.0\Notes.Common.dll
+D:\Desktop\New folder (2)\Notes.Common\bin\Debug\net6.0\Notes.Common.pdb
+D:\Desktop\New folder (2)\Notes.Common\obj\Debug\net6.0\Notes.Common.csproj.AssemblyReference.cache
+D:\Desktop\New folder (2)\Notes.Common\obj\Debug\net6.0\Notes.Common.GeneratedMSBuildEditorConfig.editorconfig
+D:\Desktop\New folder (2)\Notes.Common\obj\Debug\net6.0\Notes.Common.AssemblyInfoInputs.cache
+D:\Desktop\New folder (2)\Notes.Common\obj\Debug\net6.0\Notes.Common.AssemblyInfo.cs
+D:\Desktop\New folder (2)\Notes.Common\obj\Debug\net6.0\Notes.Common.csproj.CoreCompileInputs.cache
+D:\Desktop\New folder (2)\Notes.Common\obj\Debug\net6.0\Notes.Common.dll
+D:\Desktop\New folder (2)\Notes.Common\obj\Debug\net6.0\refint\Notes.Common.dll
+D:\Desktop\New folder (2)\Notes.Common\obj\Debug\net6.0\Notes.Common.pdb
+D:\Desktop\New folder (2)\Notes.Common\obj\Debug\net6.0\ref\Notes.Common.dll

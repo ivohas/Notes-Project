@@ -15,3 +15,20 @@ C:\Users\ASUS\Desktop\Notes-ItKarieraProject\Notes-Project\Notes.Data\obj\Debug\
 C:\Users\ASUS\Desktop\Notes-ItKarieraProject\Notes-Project\Notes.Data\obj\Debug\net6.0\refint\Notes.Data.dll
 C:\Users\ASUS\Desktop\Notes-ItKarieraProject\Notes-Project\Notes.Data\obj\Debug\net6.0\Notes.Data.pdb
 C:\Users\ASUS\Desktop\Notes-ItKarieraProject\Notes-Project\Notes.Data\obj\Debug\net6.0\ref\Notes.Data.dll
+D:\Desktop\New folder (2)\Notes.Data\bin\Debug\net6.0\Notes.Data.deps.json
+D:\Desktop\New folder (2)\Notes.Data\bin\Debug\net6.0\Notes.Data.dll
+D:\Desktop\New folder (2)\Notes.Data\bin\Debug\net6.0\Notes.Data.pdb
+D:\Desktop\New folder (2)\Notes.Data\bin\Debug\net6.0\Notes.Common.dll
+D:\Desktop\New folder (2)\Notes.Data\bin\Debug\net6.0\Notes.Data.Models.dll
+D:\Desktop\New folder (2)\Notes.Data\bin\Debug\net6.0\Notes.Common.pdb
+D:\Desktop\New folder (2)\Notes.Data\bin\Debug\net6.0\Notes.Data.Models.pdb
+D:\Desktop\New folder (2)\Notes.Data\obj\Debug\net6.0\Notes.Data.csproj.AssemblyReference.cache
+D:\Desktop\New folder (2)\Notes.Data\obj\Debug\net6.0\Notes.Data.GeneratedMSBuildEditorConfig.editorconfig
+D:\Desktop\New folder (2)\Notes.Data\obj\Debug\net6.0\Notes.Data.AssemblyInfoInputs.cache
+D:\Desktop\New folder (2)\Notes.Data\obj\Debug\net6.0\Notes.Data.AssemblyInfo.cs
+D:\Desktop\New folder (2)\Notes.Data\obj\Debug\net6.0\Notes.Data.csproj.CoreCompileInputs.cache
+D:\Desktop\New folder (2)\Notes.Data\obj\Debug\net6.0\Notes.Data.csproj.CopyComplete
+D:\Desktop\New folder (2)\Notes.Data\obj\Debug\net6.0\Notes.Data.dll
+D:\Desktop\New folder (2)\Notes.Data\obj\Debug\net6.0\refint\Notes.Data.dll
+D:\Desktop\New folder (2)\Notes.Data\obj\Debug\net6.0\Notes.Data.pdb
+D:\Desktop\New folder (2)\Notes.Data\obj\Debug\net6.0\ref\Notes.Data.dll
