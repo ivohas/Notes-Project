@@ -22,5 +22,7 @@ namespace Notes.Data.Models
 
         public string Content { get; set; }
 
+        public bool IsPinned { get; set; }
+
     }
 }
