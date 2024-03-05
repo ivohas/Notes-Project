@@ -1,7 +1,7 @@
-﻿@page
-@model List<Notes.Web.ViewModels.Note.NoteViewModel>
+﻿@model ICollection<NoteViewModel>
 @{
     ViewBag.Title = "Home Page";
+    ICollection<NoteViewModel> notes = Model;
 }
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
@@ -13,6 +13,12 @@
 <div class="container">
     <h1>Pinned Notes</h1>
     <div class="row">
+        @if (notes.Count < 1)
+        {
+            <div>
+                "No pinned notes!"
+            </div>
+        }              
         @foreach (var note in Model)
         {
             <div class="col-md-4 mb-4">

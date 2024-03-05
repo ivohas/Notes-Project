@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Notes.Services.Data.Interfaces;
+using Notes.Web.ViewModels.Note;
 
 namespace Notes.Controllers
 {
@@ -16,7 +17,7 @@ namespace Notes.Controllers
         [AllowAnonymous]
         public async Task<IActionResult> Index()
         {
-            var pinnedNotes = await _noteService.GetPinnedNotes();
+            List<NoteViewModel> pinnedNotes = await _noteService.GetPinnedNotes();
             return View(pinnedNotes);
         }
     }
