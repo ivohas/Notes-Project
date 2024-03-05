@@ -82,6 +82,31 @@ namespace Notes.Services.Data
                 Title = x.Title
             }).FirstOrDefaultAsync();
         }
+
+        public async Task<List<NoteViewModel>> GetPinnedNotes()
+        {
+            return await this._dbContext
+            .Notes
+            .Where(n => n.IsPinned)
+            .Select(x => 
+            new NoteViewModel 
+            { 
+                Id = x.Id.ToString(),
+                Content = x.Content,
+                CreatedOn = x.CreatedOn,
+                Title = x.Title
+            }).ToListAsync(); 
+        }
+
+        public async Task PinNote(string id)
+        {
+            var note = _dbContext.Notes.FirstOrDefault(n => n.Id.ToString() == id);
+            if (note != null)
+            {
+                note.IsPinned = true;
+                await _dbContext.SaveChangesAsync();
+            }
+        }
     }
 
 }

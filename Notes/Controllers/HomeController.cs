@@ -14,9 +14,10 @@ namespace Notes.Controllers
             this._noteService = noteService;
         }
         [AllowAnonymous]
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            return View();
+            var pinnedNotes = await _noteService.GetPinnedNotes();
+            return View(pinnedNotes);
         }
     }
 }

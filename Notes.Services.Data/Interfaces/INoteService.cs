@@ -1,4 +1,5 @@
-﻿using Notes.Web.ViewModels.Note;
+﻿using Notes.Data.Models;
+using Notes.Web.ViewModels.Note;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,5 +14,9 @@ namespace Notes.Services.Data.Interfaces
         Task DeleteNoteByIdAsync(string id);
         Task<List<Notes.Web.ViewModels.Note.NoteViewModel>> GetAllMyNotes(string? v);
         Task<NoteDetailsViewModel?> GetNoteDetailsByIdAsync(string id);
+
+        Task PinNote(string id);
+
+        Task<List<NoteViewModel>> GetPinnedNotes();
     }
 }

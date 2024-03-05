@@ -1,9 +1,28 @@
 ﻿@page
-@model IndexModel
+@model List<Notes.Web.ViewModels.Note.NoteViewModel>
 @{
     ViewBag.Title = "Home Page";
 }
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+
+
+<div class="container">
+    <h1>Pinned Notes</h1>
+    <div class="row">
+        @foreach (var note in Model)
+        {
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">@note.Title</h5>
+                        <p class="card-text">@note.Content</p>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
 </div>

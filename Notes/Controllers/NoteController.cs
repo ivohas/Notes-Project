@@ -56,5 +56,19 @@ namespace Notes.Controllers
 
             return View(noteDetailsViewModel);
         }
+
+        [HttpPost]
+        public async Task<IActionResult> Pin(Guid id)
+        {
+            try
+            {
+                await _noteService.PinNote(id.ToString());
+                return RedirectToAction("All", "Note");
+            }
+            catch (Exception ex)
+            {
+                return RedirectToAction("Error", "Home"); 
+            }
+        }
     }
 }
