@@ -22,3 +22,15 @@ D:\Desktop\New folder (2)\Notes.Data.Models\obj\Debug\net6.0\Notes.Data.Models.d
 D:\Desktop\New folder (2)\Notes.Data.Models\obj\Debug\net6.0\refint\Notes.Data.Models.dll
 D:\Desktop\New folder (2)\Notes.Data.Models\obj\Debug\net6.0\Notes.Data.Models.pdb
 D:\Desktop\New folder (2)\Notes.Data.Models\obj\Debug\net6.0\ref\Notes.Data.Models.dll
+D:\Desktop\notes\Notes-Project\Notes.Data.Models\bin\Debug\net6.0\Notes.Data.Models.deps.json
+D:\Desktop\notes\Notes-Project\Notes.Data.Models\bin\Debug\net6.0\Notes.Data.Models.dll
+D:\Desktop\notes\Notes-Project\Notes.Data.Models\bin\Debug\net6.0\Notes.Data.Models.pdb
+D:\Desktop\notes\Notes-Project\Notes.Data.Models\obj\Debug\net6.0\Notes.Data.Models.csproj.AssemblyReference.cache
+D:\Desktop\notes\Notes-Project\Notes.Data.Models\obj\Debug\net6.0\Notes.Data.Models.GeneratedMSBuildEditorConfig.editorconfig
+D:\Desktop\notes\Notes-Project\Notes.Data.Models\obj\Debug\net6.0\Notes.Data.Models.AssemblyInfoInputs.cache
+D:\Desktop\notes\Notes-Project\Notes.Data.Models\obj\Debug\net6.0\Notes.Data.Models.AssemblyInfo.cs
+D:\Desktop\notes\Notes-Project\Notes.Data.Models\obj\Debug\net6.0\Notes.Data.Models.csproj.CoreCompileInputs.cache
+D:\Desktop\notes\Notes-Project\Notes.Data.Models\obj\Debug\net6.0\Notes.Data.Models.dll
+D:\Desktop\notes\Notes-Project\Notes.Data.Models\obj\Debug\net6.0\refint\Notes.Data.Models.dll
+D:\Desktop\notes\Notes-Project\Notes.Data.Models\obj\Debug\net6.0\Notes.Data.Models.pdb
+D:\Desktop\notes\Notes-Project\Notes.Data.Models\obj\Debug\net6.0\ref\Notes.Data.Models.dll
