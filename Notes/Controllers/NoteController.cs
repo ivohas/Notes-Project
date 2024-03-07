@@ -5,7 +5,6 @@ using Notes.Web.ViewModels.Note;
 
 namespace Notes.Controllers
 {
-    [AllowAnonymous]
     public class NoteController : BaseController
     {
         private readonly INoteService _noteService;
@@ -26,7 +25,8 @@ namespace Notes.Controllers
         [HttpPost]
         public async Task<IActionResult> Create(NoteViewModel noteViewModel)
         {
-            await this._noteService.CreateNewNote(noteViewModel);
+            var userId = this.GetUserId();
+            await this._noteService.CreateNewNote(noteViewModel, userId);
             return RedirectToAction("All", "Note");
         }
         [HttpGet]

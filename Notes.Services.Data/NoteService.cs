@@ -16,13 +16,14 @@ namespace Notes.Services.Data
             this._dbContext = dbContext;
         }
 
-        public async Task CreateNewNote(NoteViewModel noteViewModel)
+        public async Task CreateNewNote(NoteViewModel noteViewModel, string? userId)
         {
             Note newNote = new Note()
             {
                 Content = noteViewModel.Content,
                 Title = noteViewModel.Title,
-                CreatedOn = DateTime.Now
+                CreatedOn = DateTime.Now,
+                AuthorId = userId
             };
             // add author 
 
@@ -56,8 +57,7 @@ namespace Notes.Services.Data
         {
             var myNotes = await _dbContext
                 .Notes
-                .Include(x => x.Author)
-                .Where(x => x.Author.Id == userId)
+                .Where(x => x.AuthorId == userId)
                 .Select(x => new NoteViewModel
                 {
                     Id = x.Id.ToString(),

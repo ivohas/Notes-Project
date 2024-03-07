@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,6 +22,8 @@ namespace Notes.Data.Models
 
         public DateTime CreatedOn { get; set; }
 
+        public string AuthorId { get; set; }
+        [ForeignKey(nameof(AuthorId))]
         public ApplicationUser Author { get; set; }
 
         [StringLength(ContentMaxLenght, MinimumLength = ContentMinLenght)]

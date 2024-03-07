@@ -33,7 +33,11 @@ namespace Notes.Data
             builder.Entity<Favourite>()
                 .HasKey(x => new { x.UserId, x.NoteId });
 
-
+            builder.Entity<Note>()
+                .HasOne(n => n.Author)
+                .WithMany(u => u.Notes)
+                .HasForeignKey(n => n.AuthorId)
+                .OnDelete(DeleteBehavior.NoAction);
         }
     }
 }
