@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ASUS\\Desktop\\Notes-ItKarieraProject\\Notes-Project\\Notes.Data.Models\\Notes.Data.Models.csproj": {}
+    "D:\\Desktop\\new\\Notes-Project\\Notes.Data.Models\\Notes.Data.Models.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ASUS\\Desktop\\Notes-ItKarieraProject\\Notes-Project\\Notes.Common\\Notes.Common.csproj": {
+    "D:\\Desktop\\new\\Notes-Project\\Notes.Common\\Notes.Common.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ASUS\\Desktop\\Notes-ItKarieraProject\\Notes-Project\\Notes.Common\\Notes.Common.csproj",
+        "projectUniqueName": "D:\\Desktop\\new\\Notes-Project\\Notes.Common\\Notes.Common.csproj",
         "projectName": "Notes.Common",
-        "projectPath": "C:\\Users\\ASUS\\Desktop\\Notes-ItKarieraProject\\Notes-Project\\Notes.Common\\Notes.Common.csproj",
-        "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ASUS\\Desktop\\Notes-ItKarieraProject\\Notes-Project\\Notes.Common\\obj\\",
+        "projectPath": "D:\\Desktop\\new\\Notes-Project\\Notes.Common\\Notes.Common.csproj",
+        "packagesPath": "C:\\Users\\Iliyan\\.nuget\\packages\\",
+        "outputPath": "D:\\Desktop\\new\\Notes-Project\\Notes.Common\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\ASUS\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Iliyan\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -65,24 +65,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.200\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\ASUS\\Desktop\\Notes-ItKarieraProject\\Notes-Project\\Notes.Data.Models\\Notes.Data.Models.csproj": {
+    "D:\\Desktop\\new\\Notes-Project\\Notes.Data.Models\\Notes.Data.Models.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ASUS\\Desktop\\Notes-ItKarieraProject\\Notes-Project\\Notes.Data.Models\\Notes.Data.Models.csproj",
+        "projectUniqueName": "D:\\Desktop\\new\\Notes-Project\\Notes.Data.Models\\Notes.Data.Models.csproj",
         "projectName": "Notes.Data.Models",
-        "projectPath": "C:\\Users\\ASUS\\Desktop\\Notes-ItKarieraProject\\Notes-Project\\Notes.Data.Models\\Notes.Data.Models.csproj",
-        "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ASUS\\Desktop\\Notes-ItKarieraProject\\Notes-Project\\Notes.Data.Models\\obj\\",
+        "projectPath": "D:\\Desktop\\new\\Notes-Project\\Notes.Data.Models\\Notes.Data.Models.csproj",
+        "packagesPath": "C:\\Users\\Iliyan\\.nuget\\packages\\",
+        "outputPath": "D:\\Desktop\\new\\Notes-Project\\Notes.Data.Models\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\ASUS\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Iliyan\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -97,8 +97,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\ASUS\\Desktop\\Notes-ItKarieraProject\\Notes-Project\\Notes.Common\\Notes.Common.csproj": {
-                "projectPath": "C:\\Users\\ASUS\\Desktop\\Notes-ItKarieraProject\\Notes-Project\\Notes.Common\\Notes.Common.csproj"
+              "D:\\Desktop\\new\\Notes-Project\\Notes.Common\\Notes.Common.csproj": {
+                "projectPath": "D:\\Desktop\\new\\Notes-Project\\Notes.Common\\Notes.Common.csproj"
               }
             }
           }
@@ -134,7 +134,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.200\\RuntimeIdentifierGraph.json"
         }
       }
     }

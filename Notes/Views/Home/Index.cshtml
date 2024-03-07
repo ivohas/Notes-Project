@@ -18,7 +18,7 @@
             <div>
                 "No pinned notes!"
             </div>
-        }              
+        }
         @foreach (var note in Model)
         {
             <div class="col-md-4 mb-4">
@@ -26,9 +26,19 @@
                     <div class="card-body">
                         <h5 class="card-title">@note.Title</h5>
                         <p class="card-text">@note.Content</p>
+                        <div class="d-flex justify-content-between">
+                            <form method="post" asp-action="Pin" asp-controller="Note" asp-route-id="@note.Id">
+                                <button type="submit" class="btn btn-warning">Pin</button>
+                            </form>
+                            <form method="post" asp-action="Details" asp-controller="Note" asp-route-id="@note.Id">
+                                <button type="submit" class="btn btn-primary" onclick="return confirm('Are you sure you want to open this note?')">Details</button>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
         }
+
     </div>
 </div>
+

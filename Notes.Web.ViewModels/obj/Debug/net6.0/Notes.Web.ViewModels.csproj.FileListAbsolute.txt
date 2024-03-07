@@ -32,3 +32,20 @@ D:\Desktop\New folder (2)\Notes.Web.ViewModels\obj\Debug\net6.0\Notes.Web.ViewMo
 D:\Desktop\New folder (2)\Notes.Web.ViewModels\obj\Debug\net6.0\refint\Notes.Web.ViewModels.dll
 D:\Desktop\New folder (2)\Notes.Web.ViewModels\obj\Debug\net6.0\Notes.Web.ViewModels.pdb
 D:\Desktop\New folder (2)\Notes.Web.ViewModels\obj\Debug\net6.0\ref\Notes.Web.ViewModels.dll
+D:\Desktop\new\Notes-Project\Notes.Web.ViewModels\bin\Debug\net6.0\Notes.Web.ViewModels.deps.json
+D:\Desktop\new\Notes-Project\Notes.Web.ViewModels\bin\Debug\net6.0\Notes.Web.ViewModels.dll
+D:\Desktop\new\Notes-Project\Notes.Web.ViewModels\bin\Debug\net6.0\Notes.Web.ViewModels.pdb
+D:\Desktop\new\Notes-Project\Notes.Web.ViewModels\bin\Debug\net6.0\Notes.Common.dll
+D:\Desktop\new\Notes-Project\Notes.Web.ViewModels\bin\Debug\net6.0\Notes.Data.Models.dll
+D:\Desktop\new\Notes-Project\Notes.Web.ViewModels\bin\Debug\net6.0\Notes.Common.pdb
+D:\Desktop\new\Notes-Project\Notes.Web.ViewModels\bin\Debug\net6.0\Notes.Data.Models.pdb
+D:\Desktop\new\Notes-Project\Notes.Web.ViewModels\obj\Debug\net6.0\Notes.Web.ViewModels.csproj.AssemblyReference.cache
+D:\Desktop\new\Notes-Project\Notes.Web.ViewModels\obj\Debug\net6.0\Notes.Web.ViewModels.GeneratedMSBuildEditorConfig.editorconfig
+D:\Desktop\new\Notes-Project\Notes.Web.ViewModels\obj\Debug\net6.0\Notes.Web.ViewModels.AssemblyInfoInputs.cache
+D:\Desktop\new\Notes-Project\Notes.Web.ViewModels\obj\Debug\net6.0\Notes.Web.ViewModels.AssemblyInfo.cs
+D:\Desktop\new\Notes-Project\Notes.Web.ViewModels\obj\Debug\net6.0\Notes.Web.ViewModels.csproj.CoreCompileInputs.cache
+D:\Desktop\new\Notes-Project\Notes.Web.ViewModels\obj\Debug\net6.0\Notes.Web.ViewModels.csproj.CopyComplete
+D:\Desktop\new\Notes-Project\Notes.Web.ViewModels\obj\Debug\net6.0\Notes.Web.ViewModels.dll
+D:\Desktop\new\Notes-Project\Notes.Web.ViewModels\obj\Debug\net6.0\refint\Notes.Web.ViewModels.dll
+D:\Desktop\new\Notes-Project\Notes.Web.ViewModels\obj\Debug\net6.0\Notes.Web.ViewModels.pdb
+D:\Desktop\new\Notes-Project\Notes.Web.ViewModels\obj\Debug\net6.0\ref\Notes.Web.ViewModels.dll

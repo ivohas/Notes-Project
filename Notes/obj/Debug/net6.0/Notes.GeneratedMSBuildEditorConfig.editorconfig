@@ -9,81 +9,81 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Notes
 build_property.RootNamespace = Notes
-build_property.ProjectDir = C:\Users\ASUS\Desktop\Notes-ItKarieraProject\Notes-Project\Notes\
+build_property.ProjectDir = D:\Desktop\new\Notes-Project\Notes\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\ASUS\Desktop\Notes-ItKarieraProject\Notes-Project\Notes
+build_property.MSBuildProjectDirectory = D:\Desktop\new\Notes-Project\Notes
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/ASUS/Desktop/Notes-ItKarieraProject/Notes-Project/Notes/Areas/Identity/Pages/Account/Login.cshtml]
+[D:/Desktop/new/Notes-Project/Notes/Areas/Identity/Pages/Account/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ASUS/Desktop/Notes-ItKarieraProject/Notes-Project/Notes/Areas/Identity/Pages/Account/Register.cshtml]
+[D:/Desktop/new/Notes-Project/Notes/Areas/Identity/Pages/Account/Register.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ASUS/Desktop/Notes-ItKarieraProject/Notes-Project/Notes/Areas/Identity/Pages/Account/_ViewImports.cshtml]
+[D:/Desktop/new/Notes-Project/Notes/Areas/Identity/Pages/Account/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxfVmlld0ltcG9ydHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ASUS/Desktop/Notes-ItKarieraProject/Notes-Project/Notes/Areas/Identity/Pages/_ValidationScriptsPartial.cshtml]
+[D:/Desktop/new/Notes-Project/Notes/Areas/Identity/Pages/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZhbGlkYXRpb25TY3JpcHRzUGFydGlhbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ASUS/Desktop/Notes-ItKarieraProject/Notes-Project/Notes/Areas/Identity/Pages/_ViewImports.cshtml]
+[D:/Desktop/new/Notes-Project/Notes/Areas/Identity/Pages/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ASUS/Desktop/Notes-ItKarieraProject/Notes-Project/Notes/Areas/Identity/Pages/_ViewStart.cshtml]
+[D:/Desktop/new/Notes-Project/Notes/Areas/Identity/Pages/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ASUS/Desktop/Notes-ItKarieraProject/Notes-Project/Notes/Views/Error.cshtml]
+[D:/Desktop/new/Notes-Project/Notes/Views/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ASUS/Desktop/Notes-ItKarieraProject/Notes-Project/Notes/Views/Home/Index.cshtml]
+[D:/Desktop/new/Notes-Project/Notes/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ASUS/Desktop/Notes-ItKarieraProject/Notes-Project/Notes/Views/Index.cshtml]
+[D:/Desktop/new/Notes-Project/Notes/Views/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ASUS/Desktop/Notes-ItKarieraProject/Notes-Project/Notes/Views/Note/All.cshtml]
+[D:/Desktop/new/Notes-Project/Notes/Views/Note/All.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTm90ZVxBbGwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ASUS/Desktop/Notes-ItKarieraProject/Notes-Project/Notes/Views/Note/Create.cshtml]
+[D:/Desktop/new/Notes-Project/Notes/Views/Note/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTm90ZVxDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ASUS/Desktop/Notes-ItKarieraProject/Notes-Project/Notes/Views/Note/Details.cshtml]
+[D:/Desktop/new/Notes-Project/Notes/Views/Note/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTm90ZVxEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ASUS/Desktop/Notes-ItKarieraProject/Notes-Project/Notes/Views/Privacy.cshtml]
+[D:/Desktop/new/Notes-Project/Notes/Views/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJpdmFjeS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ASUS/Desktop/Notes-ItKarieraProject/Notes-Project/Notes/Views/Shared/_LoginPartial.cshtml]
+[D:/Desktop/new/Notes-Project/Notes/Views/Shared/_LoginPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Mb2dpblBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ASUS/Desktop/Notes-ItKarieraProject/Notes-Project/Notes/Views/Shared/_ValidationScriptsPartial.cshtml]
+[D:/Desktop/new/Notes-Project/Notes/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ASUS/Desktop/Notes-ItKarieraProject/Notes-Project/Notes/Views/_ViewImports.cshtml]
+[D:/Desktop/new/Notes-Project/Notes/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ASUS/Desktop/Notes-ItKarieraProject/Notes-Project/Notes/Views/_ViewStart.cshtml]
+[D:/Desktop/new/Notes-Project/Notes/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ASUS/Desktop/Notes-ItKarieraProject/Notes-Project/Notes/Views/Shared/_Layout.cshtml]
+[D:/Desktop/new/Notes-Project/Notes/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-qf4uehnu4c

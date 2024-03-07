@@ -100,12 +100,15 @@ namespace Notes.Services.Data
 
         public async Task PinNote(string id)
         {
-            var note = _dbContext.Notes.FirstOrDefault(n => n.Id.ToString() == id);
-            if (note != null)
-            {
-                note.IsPinned = true;
-                await _dbContext.SaveChangesAsync();
-            }
+            var note = await _dbContext.Notes.FirstAsync(n => n.Id.ToString() == id);
+
+
+            // Toggle the IsPinned property
+            note.IsPinned = !note.IsPinned;
+
+            // Save changes to the database
+            await _dbContext.SaveChangesAsync();
+
         }
     }
 
