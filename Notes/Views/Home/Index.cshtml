@@ -33,6 +33,8 @@
                             <form method="post" asp-action="Details" asp-controller="Note" asp-route-id="@note.Id">
                                 <button type="submit" class="btn btn-primary" onclick="return confirm('Are you sure you want to open this note?')">Details</button>
                             </form>
+                            <a asp-area="" asp-controller="Note" asp-action="Edit" asp-route-id="@note.Id"
+                               class="btn btn-success">Edit</a>
                         </div>
                     </div>
                 </div>
