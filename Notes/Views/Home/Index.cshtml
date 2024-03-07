@@ -28,7 +28,7 @@
                         <p class="card-text">@note.Content</p>
                         <div class="d-flex justify-content-between">
                             <form method="post" asp-action="Pin" asp-controller="Note" asp-route-id="@note.Id">
-                                <button type="submit" class="btn btn-warning">Pin</button>
+                                <button type="submit" class="btn btn-warning">Pin/Unpin</button>
                             </form>
                             <form method="post" asp-action="Details" asp-controller="Note" asp-route-id="@note.Id">
                                 <button type="submit" class="btn btn-primary" onclick="return confirm('Are you sure you want to open this note?')">Details</button>

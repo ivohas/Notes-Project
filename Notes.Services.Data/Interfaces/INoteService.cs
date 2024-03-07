@@ -18,5 +18,7 @@ namespace Notes.Services.Data.Interfaces
 
         Task<List<NoteViewModel>> GetPinnedNotes();
         Task CreateNewNote(NoteViewModel noteViewModel, string? userId);
+        Task<NoteViewModel> GetNoteForEditByIdAsync(string id);
+        Task EditNoteByIdAndFormModelAsync(string id, NoteViewModel formModel);
     }
 }

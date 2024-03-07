@@ -53,6 +53,18 @@ namespace Notes.Services.Data
 
         }
 
+        public async Task EditNoteByIdAndFormModelAsync(string id, NoteViewModel formModel)
+        {
+            Note note = await this._dbContext
+                .Notes
+                .FirstAsync(w => w.Id.ToString() == id);
+
+            note.Title = formModel.Title;
+            note.Content = formModel.Content;
+
+            await this._dbContext.SaveChangesAsync();
+        }
+
         public async Task<List<NoteViewModel>> GetAllMyNotes(string userId)
         {
             var myNotes = await _dbContext
@@ -68,6 +80,7 @@ namespace Notes.Services.Data
             return myNotes;
         }
 
+
         public async Task<NoteDetailsViewModel?> GetNoteDetailsByIdAsync(string id)
         {
             return await this._dbContext
@@ -81,6 +94,19 @@ namespace Notes.Services.Data
                 CreatedOn = x.CreatedOn,
                 Title = x.Title
             }).FirstOrDefaultAsync();
+        }
+
+        public async Task<NoteViewModel> GetNoteForEditByIdAsync(string id)
+        {
+            Note? note = await this._dbContext
+                .Notes
+                .FirstAsync(w => w.Id.ToString() == id);
+
+            return new NoteViewModel()
+            {
+                Content = note.Content,
+                Title = note.Title,
+            };
         }
 
         public async Task<List<NoteViewModel>> GetPinnedNotes()
@@ -110,6 +136,7 @@ namespace Notes.Services.Data
             await _dbContext.SaveChangesAsync();
 
         }
+
     }
 
 }

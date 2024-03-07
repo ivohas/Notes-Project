@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Notes.Services.Data.Interfaces;
 using Notes.Web.ViewModels.Note;
 
@@ -69,6 +70,36 @@ namespace Notes.Controllers
             {
                 return RedirectToAction("Error", "Home"); 
             }
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> Edit(Guid id)
+        {
+
+            try
+            {
+                NoteViewModel formModel = await this._noteService.GetNoteForEditByIdAsync(id.ToString());
+                return View(formModel);
+            }
+            catch (Exception)
+            {
+                return RedirectToAction("Error", "Home");
+            }
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Edit(Guid id, NoteViewModel formModel)
+        {
+            try
+            {
+                await this._noteService.EditNoteByIdAndFormModelAsync(id.ToString(), formModel);
+            }
+            catch (Exception)
+            {
+                return View(formModel);
+            }
+            return this.RedirectToAction("Details", "Note", new { id });
         }
     }
 }
