@@ -22,6 +22,8 @@ namespace Notes.Data
 
         public DbSet<Favourite> Favourites { get; set; }
 
+        public DbSet<Trash> Trash { get; set; }
+
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
