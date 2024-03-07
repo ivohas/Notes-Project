@@ -96,7 +96,11 @@
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Users\\ASUS\\Desktop\\Notes-ItKarieraProject\\Notes-Project\\Notes.Common\\Notes.Common.csproj": {
+                "projectPath": "C:\\Users\\ASUS\\Desktop\\Notes-ItKarieraProject\\Notes-Project\\Notes.Common\\Notes.Common.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
