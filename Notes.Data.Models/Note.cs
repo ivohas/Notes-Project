@@ -31,5 +31,7 @@ namespace Notes.Data.Models
 
         public bool IsPinned { get; set; }
 
+        public bool IsInTrash { get; set; }
+
     }
 }

@@ -101,5 +101,18 @@ namespace Notes.Controllers
             }
             return this.RedirectToAction("Details", "Note", new { id });
         }
+
+        [HttpPost]
+        public async Task<IActionResult> MoveToTrash(Guid id)
+        {
+            var result = await _noteService.MoveToTrashAsync(id.ToString());
+
+            if (!result)
+            {
+                return NotFound(); // Note not found
+            }
+
+            return RedirectToAction("Index"); // Redirect to the index page or any other appropriate page
+        }
     }
 }

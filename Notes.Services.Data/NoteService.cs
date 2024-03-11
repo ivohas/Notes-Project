@@ -124,6 +124,22 @@ namespace Notes.Services.Data
             }).ToListAsync(); 
         }
 
+        public async Task<bool> MoveToTrashAsync(string noteId)
+        {
+            var note = await _dbContext.Notes.FindAsync(noteId);
+
+            if (note == null)
+            {
+                return false; // Note not found
+            }
+
+            note.IsInTrash = true;
+
+            await _dbContext.SaveChangesAsync();
+
+            return true; // Note moved to trash successfully
+        }
+
         public async Task PinNote(string id)
         {
             var note = await _dbContext.Notes.FirstAsync(n => n.Id.ToString() == id);

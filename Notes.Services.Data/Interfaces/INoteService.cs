@@ -20,5 +20,7 @@ namespace Notes.Services.Data.Interfaces
         Task CreateNewNote(NoteViewModel noteViewModel, string? userId);
         Task<NoteViewModel> GetNoteForEditByIdAsync(string id);
         Task EditNoteByIdAndFormModelAsync(string id, NoteViewModel formModel);
+
+        Task<bool> MoveToTrashAsync(string noteId);
     }
 }
