@@ -69,7 +69,7 @@ namespace Notes.Services.Data
         {
             var myNotes = await _dbContext
                 .Notes
-                .Where(x => x.AuthorId == userId)
+                .Where(x => x.AuthorId == userId && x.IsInTrash == false)
                 .Select(x => new NoteViewModel
                 {
                     Id = x.Id.ToString(),
@@ -113,20 +113,34 @@ namespace Notes.Services.Data
         {
             return await this._dbContext
             .Notes
-            .Where(n => n.IsPinned)
-            .Select(x => 
-            new NoteViewModel 
-            { 
+            .Where(n => n.IsPinned && n.IsInTrash == false)
+            .Select(x =>
+            new NoteViewModel
+            {
                 Id = x.Id.ToString(),
                 Content = x.Content,
                 CreatedOn = x.CreatedOn,
                 Title = x.Title
-            }).ToListAsync(); 
+            }).ToListAsync();
+        }
+
+        public async Task<IEnumerable<NoteViewModel>> GetTrashNotesAsync()
+        {
+            return await _dbContext.Notes
+            .Where(n => n.IsInTrash) // Assuming you have a flag like IsDeleted to mark notes as trash
+            .Select(n => new NoteViewModel
+            {
+                Id = n.Id.ToString(),
+                Title = n.Title,
+                Content = n.Content,
+                // Map other properties as needed
+            })
+            .ToListAsync();
         }
 
         public async Task<bool> MoveToTrashAsync(string noteId)
         {
-            var note = await _dbContext.Notes.FindAsync(noteId);
+            var note = await _dbContext.Notes.FirstAsync(n => n.Id.ToString() == noteId);
 
             if (note == null)
             {

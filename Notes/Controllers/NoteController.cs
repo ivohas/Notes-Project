@@ -112,7 +112,14 @@ namespace Notes.Controllers
                 return NotFound(); // Note not found
             }
 
-            return RedirectToAction("Index"); // Redirect to the index page or any other appropriate page
+            return RedirectToAction("All", "Note");// Redirect to the index page or any other appropriate page
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> TrashNotes()
+        {
+            var trashNotes = await _noteService.GetTrashNotesAsync();
+            return View(trashNotes);
         }
     }
 }

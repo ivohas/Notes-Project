@@ -22,5 +22,7 @@ namespace Notes.Services.Data.Interfaces
         Task EditNoteByIdAndFormModelAsync(string id, NoteViewModel formModel);
 
         Task<bool> MoveToTrashAsync(string noteId);
+
+        Task<IEnumerable<NoteViewModel>> GetTrashNotesAsync();
     }
 }
