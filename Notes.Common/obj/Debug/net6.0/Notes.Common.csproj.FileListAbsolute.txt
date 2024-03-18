@@ -46,3 +46,15 @@ D:\Desktop\again\Notes-Project\Notes.Common\obj\Debug\net6.0\Notes.Common.dll
 D:\Desktop\again\Notes-Project\Notes.Common\obj\Debug\net6.0\refint\Notes.Common.dll
 D:\Desktop\again\Notes-Project\Notes.Common\obj\Debug\net6.0\Notes.Common.pdb
 D:\Desktop\again\Notes-Project\Notes.Common\obj\Debug\net6.0\ref\Notes.Common.dll
+D:\Desktop\aaaaaaaaaaaa\Notes-Project\Notes.Common\bin\Debug\net6.0\Notes.Common.deps.json
+D:\Desktop\aaaaaaaaaaaa\Notes-Project\Notes.Common\bin\Debug\net6.0\Notes.Common.dll
+D:\Desktop\aaaaaaaaaaaa\Notes-Project\Notes.Common\bin\Debug\net6.0\Notes.Common.pdb
+D:\Desktop\aaaaaaaaaaaa\Notes-Project\Notes.Common\obj\Debug\net6.0\Notes.Common.csproj.AssemblyReference.cache
+D:\Desktop\aaaaaaaaaaaa\Notes-Project\Notes.Common\obj\Debug\net6.0\Notes.Common.GeneratedMSBuildEditorConfig.editorconfig
+D:\Desktop\aaaaaaaaaaaa\Notes-Project\Notes.Common\obj\Debug\net6.0\Notes.Common.AssemblyInfoInputs.cache
+D:\Desktop\aaaaaaaaaaaa\Notes-Project\Notes.Common\obj\Debug\net6.0\Notes.Common.AssemblyInfo.cs
+D:\Desktop\aaaaaaaaaaaa\Notes-Project\Notes.Common\obj\Debug\net6.0\Notes.Common.csproj.CoreCompileInputs.cache
+D:\Desktop\aaaaaaaaaaaa\Notes-Project\Notes.Common\obj\Debug\net6.0\Notes.Common.dll
+D:\Desktop\aaaaaaaaaaaa\Notes-Project\Notes.Common\obj\Debug\net6.0\refint\Notes.Common.dll
+D:\Desktop\aaaaaaaaaaaa\Notes-Project\Notes.Common\obj\Debug\net6.0\Notes.Common.pdb
+D:\Desktop\aaaaaaaaaaaa\Notes-Project\Notes.Common\obj\Debug\net6.0\ref\Notes.Common.dll

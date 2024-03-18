@@ -51,6 +51,7 @@ namespace Notes.Controllers
             }
         }
 
+        [HttpGet]
         public async Task<IActionResult> Details(string id) {
 
             NoteDetailsViewModel? noteDetailsViewModel = await this._noteService.GetNoteDetailsByIdAsync(id);

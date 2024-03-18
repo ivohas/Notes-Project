@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Desktop\\again\\Notes-Project\\Notes.Services.Data\\Notes.Services.Data.csproj": {}
+    "D:\\Desktop\\aaaaaaaaaaaa\\Notes-Project\\Notes.Services.Data\\Notes.Services.Data.csproj": {}
   },
   "projects": {
-    "D:\\Desktop\\again\\Notes-Project\\Notes.Common\\Notes.Common.csproj": {
+    "D:\\Desktop\\aaaaaaaaaaaa\\Notes-Project\\Notes.Common\\Notes.Common.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Desktop\\again\\Notes-Project\\Notes.Common\\Notes.Common.csproj",
+        "projectUniqueName": "D:\\Desktop\\aaaaaaaaaaaa\\Notes-Project\\Notes.Common\\Notes.Common.csproj",
         "projectName": "Notes.Common",
-        "projectPath": "D:\\Desktop\\again\\Notes-Project\\Notes.Common\\Notes.Common.csproj",
+        "projectPath": "D:\\Desktop\\aaaaaaaaaaaa\\Notes-Project\\Notes.Common\\Notes.Common.csproj",
         "packagesPath": "C:\\Users\\Iliyan\\.nuget\\packages\\",
-        "outputPath": "D:\\Desktop\\again\\Notes-Project\\Notes.Common\\obj\\",
+        "outputPath": "D:\\Desktop\\aaaaaaaaaaaa\\Notes-Project\\Notes.Common\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -69,14 +69,14 @@
         }
       }
     },
-    "D:\\Desktop\\again\\Notes-Project\\Notes.Data.Models\\Notes.Data.Models.csproj": {
+    "D:\\Desktop\\aaaaaaaaaaaa\\Notes-Project\\Notes.Data.Models\\Notes.Data.Models.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Desktop\\again\\Notes-Project\\Notes.Data.Models\\Notes.Data.Models.csproj",
+        "projectUniqueName": "D:\\Desktop\\aaaaaaaaaaaa\\Notes-Project\\Notes.Data.Models\\Notes.Data.Models.csproj",
         "projectName": "Notes.Data.Models",
-        "projectPath": "D:\\Desktop\\again\\Notes-Project\\Notes.Data.Models\\Notes.Data.Models.csproj",
+        "projectPath": "D:\\Desktop\\aaaaaaaaaaaa\\Notes-Project\\Notes.Data.Models\\Notes.Data.Models.csproj",
         "packagesPath": "C:\\Users\\Iliyan\\.nuget\\packages\\",
-        "outputPath": "D:\\Desktop\\again\\Notes-Project\\Notes.Data.Models\\obj\\",
+        "outputPath": "D:\\Desktop\\aaaaaaaaaaaa\\Notes-Project\\Notes.Data.Models\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -97,8 +97,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "D:\\Desktop\\again\\Notes-Project\\Notes.Common\\Notes.Common.csproj": {
-                "projectPath": "D:\\Desktop\\again\\Notes-Project\\Notes.Common\\Notes.Common.csproj"
+              "D:\\Desktop\\aaaaaaaaaaaa\\Notes-Project\\Notes.Common\\Notes.Common.csproj": {
+                "projectPath": "D:\\Desktop\\aaaaaaaaaaaa\\Notes-Project\\Notes.Common\\Notes.Common.csproj"
               }
             }
           }
@@ -138,14 +138,14 @@
         }
       }
     },
-    "D:\\Desktop\\again\\Notes-Project\\Notes.Data\\Notes.Data.csproj": {
+    "D:\\Desktop\\aaaaaaaaaaaa\\Notes-Project\\Notes.Data\\Notes.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Desktop\\again\\Notes-Project\\Notes.Data\\Notes.Data.csproj",
+        "projectUniqueName": "D:\\Desktop\\aaaaaaaaaaaa\\Notes-Project\\Notes.Data\\Notes.Data.csproj",
         "projectName": "Notes.Data",
-        "projectPath": "D:\\Desktop\\again\\Notes-Project\\Notes.Data\\Notes.Data.csproj",
+        "projectPath": "D:\\Desktop\\aaaaaaaaaaaa\\Notes-Project\\Notes.Data\\Notes.Data.csproj",
         "packagesPath": "C:\\Users\\Iliyan\\.nuget\\packages\\",
-        "outputPath": "D:\\Desktop\\again\\Notes-Project\\Notes.Data\\obj\\",
+        "outputPath": "D:\\Desktop\\aaaaaaaaaaaa\\Notes-Project\\Notes.Data\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -166,11 +166,11 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "D:\\Desktop\\again\\Notes-Project\\Notes.Common\\Notes.Common.csproj": {
-                "projectPath": "D:\\Desktop\\again\\Notes-Project\\Notes.Common\\Notes.Common.csproj"
+              "D:\\Desktop\\aaaaaaaaaaaa\\Notes-Project\\Notes.Common\\Notes.Common.csproj": {
+                "projectPath": "D:\\Desktop\\aaaaaaaaaaaa\\Notes-Project\\Notes.Common\\Notes.Common.csproj"
               },
-              "D:\\Desktop\\again\\Notes-Project\\Notes.Data.Models\\Notes.Data.Models.csproj": {
-                "projectPath": "D:\\Desktop\\again\\Notes-Project\\Notes.Data.Models\\Notes.Data.Models.csproj"
+              "D:\\Desktop\\aaaaaaaaaaaa\\Notes-Project\\Notes.Data.Models\\Notes.Data.Models.csproj": {
+                "projectPath": "D:\\Desktop\\aaaaaaaaaaaa\\Notes-Project\\Notes.Data.Models\\Notes.Data.Models.csproj"
               }
             }
           }
@@ -214,14 +214,14 @@
         }
       }
     },
-    "D:\\Desktop\\again\\Notes-Project\\Notes.Services.Data\\Notes.Services.Data.csproj": {
+    "D:\\Desktop\\aaaaaaaaaaaa\\Notes-Project\\Notes.Services.Data\\Notes.Services.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Desktop\\again\\Notes-Project\\Notes.Services.Data\\Notes.Services.Data.csproj",
+        "projectUniqueName": "D:\\Desktop\\aaaaaaaaaaaa\\Notes-Project\\Notes.Services.Data\\Notes.Services.Data.csproj",
         "projectName": "Notes.Services.Data",
-        "projectPath": "D:\\Desktop\\again\\Notes-Project\\Notes.Services.Data\\Notes.Services.Data.csproj",
+        "projectPath": "D:\\Desktop\\aaaaaaaaaaaa\\Notes-Project\\Notes.Services.Data\\Notes.Services.Data.csproj",
         "packagesPath": "C:\\Users\\Iliyan\\.nuget\\packages\\",
-        "outputPath": "D:\\Desktop\\again\\Notes-Project\\Notes.Services.Data\\obj\\",
+        "outputPath": "D:\\Desktop\\aaaaaaaaaaaa\\Notes-Project\\Notes.Services.Data\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -242,17 +242,17 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "D:\\Desktop\\again\\Notes-Project\\Notes.Common\\Notes.Common.csproj": {
-                "projectPath": "D:\\Desktop\\again\\Notes-Project\\Notes.Common\\Notes.Common.csproj"
+              "D:\\Desktop\\aaaaaaaaaaaa\\Notes-Project\\Notes.Common\\Notes.Common.csproj": {
+                "projectPath": "D:\\Desktop\\aaaaaaaaaaaa\\Notes-Project\\Notes.Common\\Notes.Common.csproj"
               },
-              "D:\\Desktop\\again\\Notes-Project\\Notes.Data.Models\\Notes.Data.Models.csproj": {
-                "projectPath": "D:\\Desktop\\again\\Notes-Project\\Notes.Data.Models\\Notes.Data.Models.csproj"
+              "D:\\Desktop\\aaaaaaaaaaaa\\Notes-Project\\Notes.Data.Models\\Notes.Data.Models.csproj": {
+                "projectPath": "D:\\Desktop\\aaaaaaaaaaaa\\Notes-Project\\Notes.Data.Models\\Notes.Data.Models.csproj"
               },
-              "D:\\Desktop\\again\\Notes-Project\\Notes.Data\\Notes.Data.csproj": {
-                "projectPath": "D:\\Desktop\\again\\Notes-Project\\Notes.Data\\Notes.Data.csproj"
+              "D:\\Desktop\\aaaaaaaaaaaa\\Notes-Project\\Notes.Data\\Notes.Data.csproj": {
+                "projectPath": "D:\\Desktop\\aaaaaaaaaaaa\\Notes-Project\\Notes.Data\\Notes.Data.csproj"
               },
-              "D:\\Desktop\\again\\Notes-Project\\Notes.Web.ViewModels\\Notes.Web.ViewModels.csproj": {
-                "projectPath": "D:\\Desktop\\again\\Notes-Project\\Notes.Web.ViewModels\\Notes.Web.ViewModels.csproj"
+              "D:\\Desktop\\aaaaaaaaaaaa\\Notes-Project\\Notes.Web.ViewModels\\Notes.Web.ViewModels.csproj": {
+                "projectPath": "D:\\Desktop\\aaaaaaaaaaaa\\Notes-Project\\Notes.Web.ViewModels\\Notes.Web.ViewModels.csproj"
               }
             }
           }
@@ -292,14 +292,14 @@
         }
       }
     },
-    "D:\\Desktop\\again\\Notes-Project\\Notes.Web.ViewModels\\Notes.Web.ViewModels.csproj": {
+    "D:\\Desktop\\aaaaaaaaaaaa\\Notes-Project\\Notes.Web.ViewModels\\Notes.Web.ViewModels.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Desktop\\again\\Notes-Project\\Notes.Web.ViewModels\\Notes.Web.ViewModels.csproj",
+        "projectUniqueName": "D:\\Desktop\\aaaaaaaaaaaa\\Notes-Project\\Notes.Web.ViewModels\\Notes.Web.ViewModels.csproj",
         "projectName": "Notes.Web.ViewModels",
-        "projectPath": "D:\\Desktop\\again\\Notes-Project\\Notes.Web.ViewModels\\Notes.Web.ViewModels.csproj",
+        "projectPath": "D:\\Desktop\\aaaaaaaaaaaa\\Notes-Project\\Notes.Web.ViewModels\\Notes.Web.ViewModels.csproj",
         "packagesPath": "C:\\Users\\Iliyan\\.nuget\\packages\\",
-        "outputPath": "D:\\Desktop\\again\\Notes-Project\\Notes.Web.ViewModels\\obj\\",
+        "outputPath": "D:\\Desktop\\aaaaaaaaaaaa\\Notes-Project\\Notes.Web.ViewModels\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -320,11 +320,11 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "D:\\Desktop\\again\\Notes-Project\\Notes.Common\\Notes.Common.csproj": {
-                "projectPath": "D:\\Desktop\\again\\Notes-Project\\Notes.Common\\Notes.Common.csproj"
+              "D:\\Desktop\\aaaaaaaaaaaa\\Notes-Project\\Notes.Common\\Notes.Common.csproj": {
+                "projectPath": "D:\\Desktop\\aaaaaaaaaaaa\\Notes-Project\\Notes.Common\\Notes.Common.csproj"
               },
-              "D:\\Desktop\\again\\Notes-Project\\Notes.Data.Models\\Notes.Data.Models.csproj": {
-                "projectPath": "D:\\Desktop\\again\\Notes-Project\\Notes.Data.Models\\Notes.Data.Models.csproj"
+              "D:\\Desktop\\aaaaaaaaaaaa\\Notes-Project\\Notes.Data.Models\\Notes.Data.Models.csproj": {
+                "projectPath": "D:\\Desktop\\aaaaaaaaaaaa\\Notes-Project\\Notes.Data.Models\\Notes.Data.Models.csproj"
               }
             }
           }

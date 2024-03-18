@@ -2171,11 +2171,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Desktop\\again\\Notes-Project\\Notes.Services.Data\\Notes.Services.Data.csproj",
+      "projectUniqueName": "D:\\Desktop\\aaaaaaaaaaaa\\Notes-Project\\Notes.Services.Data\\Notes.Services.Data.csproj",
       "projectName": "Notes.Services.Data",
-      "projectPath": "D:\\Desktop\\again\\Notes-Project\\Notes.Services.Data\\Notes.Services.Data.csproj",
+      "projectPath": "D:\\Desktop\\aaaaaaaaaaaa\\Notes-Project\\Notes.Services.Data\\Notes.Services.Data.csproj",
       "packagesPath": "C:\\Users\\Iliyan\\.nuget\\packages\\",
-      "outputPath": "D:\\Desktop\\again\\Notes-Project\\Notes.Services.Data\\obj\\",
+      "outputPath": "D:\\Desktop\\aaaaaaaaaaaa\\Notes-Project\\Notes.Services.Data\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -2196,17 +2196,17 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "D:\\Desktop\\again\\Notes-Project\\Notes.Common\\Notes.Common.csproj": {
-              "projectPath": "D:\\Desktop\\again\\Notes-Project\\Notes.Common\\Notes.Common.csproj"
+            "D:\\Desktop\\aaaaaaaaaaaa\\Notes-Project\\Notes.Common\\Notes.Common.csproj": {
+              "projectPath": "D:\\Desktop\\aaaaaaaaaaaa\\Notes-Project\\Notes.Common\\Notes.Common.csproj"
             },
-            "D:\\Desktop\\again\\Notes-Project\\Notes.Data.Models\\Notes.Data.Models.csproj": {
-              "projectPath": "D:\\Desktop\\again\\Notes-Project\\Notes.Data.Models\\Notes.Data.Models.csproj"
+            "D:\\Desktop\\aaaaaaaaaaaa\\Notes-Project\\Notes.Data.Models\\Notes.Data.Models.csproj": {
+              "projectPath": "D:\\Desktop\\aaaaaaaaaaaa\\Notes-Project\\Notes.Data.Models\\Notes.Data.Models.csproj"
             },
-            "D:\\Desktop\\again\\Notes-Project\\Notes.Data\\Notes.Data.csproj": {
-              "projectPath": "D:\\Desktop\\again\\Notes-Project\\Notes.Data\\Notes.Data.csproj"
+            "D:\\Desktop\\aaaaaaaaaaaa\\Notes-Project\\Notes.Data\\Notes.Data.csproj": {
+              "projectPath": "D:\\Desktop\\aaaaaaaaaaaa\\Notes-Project\\Notes.Data\\Notes.Data.csproj"
             },
-            "D:\\Desktop\\again\\Notes-Project\\Notes.Web.ViewModels\\Notes.Web.ViewModels.csproj": {
-              "projectPath": "D:\\Desktop\\again\\Notes-Project\\Notes.Web.ViewModels\\Notes.Web.ViewModels.csproj"
+            "D:\\Desktop\\aaaaaaaaaaaa\\Notes-Project\\Notes.Web.ViewModels\\Notes.Web.ViewModels.csproj": {
+              "projectPath": "D:\\Desktop\\aaaaaaaaaaaa\\Notes-Project\\Notes.Web.ViewModels\\Notes.Web.ViewModels.csproj"
             }
           }
         }

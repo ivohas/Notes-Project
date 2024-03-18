@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Desktop\\again\\Notes-Project\\Notes.Common\\Notes.Common.csproj": {}
+    "D:\\Desktop\\aaaaaaaaaaaa\\Notes-Project\\Notes.Common\\Notes.Common.csproj": {}
   },
   "projects": {
-    "D:\\Desktop\\again\\Notes-Project\\Notes.Common\\Notes.Common.csproj": {
+    "D:\\Desktop\\aaaaaaaaaaaa\\Notes-Project\\Notes.Common\\Notes.Common.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Desktop\\again\\Notes-Project\\Notes.Common\\Notes.Common.csproj",
+        "projectUniqueName": "D:\\Desktop\\aaaaaaaaaaaa\\Notes-Project\\Notes.Common\\Notes.Common.csproj",
         "projectName": "Notes.Common",
-        "projectPath": "D:\\Desktop\\again\\Notes-Project\\Notes.Common\\Notes.Common.csproj",
+        "projectPath": "D:\\Desktop\\aaaaaaaaaaaa\\Notes-Project\\Notes.Common\\Notes.Common.csproj",
         "packagesPath": "C:\\Users\\Iliyan\\.nuget\\packages\\",
-        "outputPath": "D:\\Desktop\\again\\Notes-Project\\Notes.Common\\obj\\",
+        "outputPath": "D:\\Desktop\\aaaaaaaaaaaa\\Notes-Project\\Notes.Common\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
