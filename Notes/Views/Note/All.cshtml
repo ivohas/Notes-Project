@@ -2,6 +2,17 @@
 @model IEnumerable<NoteViewModel>
 <h2>List of Notes</h2>
 
+<div>
+    Sort by:
+    <a asp-action="All" asp-route-sortOrder="title_asc">Title Ascending</a> |
+    <a asp-action="All" asp-route-sortOrder="title_desc">Title Descending</a> |
+    <a asp-action="All" asp-route-sortOrder="content_asc">Content Ascending</a> |
+    <a asp-action="All" asp-route-sortOrder="content_desc">Content Descending</a> |
+    <a asp-action="All" asp-route-sortOrder="date_desc">Date Created Descending</a> |
+    <a asp-action="All" asp-route-sortOrder="date_asc">Date Created Ascending</a>
+</div>
+
+
 @if (Model.Any())
 {
     <div class="row">

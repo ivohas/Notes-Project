@@ -11,7 +11,7 @@ namespace Notes.Services.Data.Interfaces
     public interface INoteService
     {
         Task DeleteNoteByIdAsync(string id);
-        Task<List<Notes.Web.ViewModels.Note.NoteViewModel>> GetAllMyNotes(string? v);
+        Task<List<Notes.Web.ViewModels.Note.NoteViewModel>> GetAllMyNotes(string? v, string sortOrder);
         Task<NoteDetailsViewModel?> GetNoteDetailsByIdAsync(string id);
 
         Task PinNote(string id);

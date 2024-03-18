@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using Notes.Services.Data.Interfaces;
 using Notes.Web.ViewModels.Note;
@@ -32,10 +33,17 @@ namespace Notes.Controllers
             return RedirectToAction("All", "Note");
         }
         [HttpGet]
-        public async Task<IActionResult> All()
+        public async Task<IActionResult> All(string sortOrder)
         {
-            List<NoteViewModel> allNotes = await this._noteService.GetAllMyNotes(this.GetUserId());
-            return View(allNotes);
+            //List<NoteViewModel> allNotes = await this._noteService.GetAllMyNotes(this.GetUserId());
+            //return View(allNotes);
+
+            ViewData["TitleSortParam"] = String.IsNullOrEmpty(sortOrder) ? "title_desc" : "";
+            ViewData["ContentSortParam"] = sortOrder == "content_asc" ? "content_desc" : "content_asc";
+
+            var notes = await _noteService.GetAllMyNotes(this.GetUserId(), sortOrder);
+
+            return View(notes);
         }
         [HttpPost]
         public async Task<IActionResult> Delete(string id)

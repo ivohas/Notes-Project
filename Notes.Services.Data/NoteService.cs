@@ -4,6 +4,7 @@ using Notes.Data.Models;
 using Notes.Services.Data.Interfaces;
 using Notes.Web.ViewModels.Note;
 using System.Xml;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 
 namespace Notes.Services.Data
 {
@@ -98,11 +99,47 @@ namespace Notes.Services.Data
             await this._dbContext.SaveChangesAsync();
         }
 
-        public async Task<List<NoteViewModel>> GetAllMyNotes(string userId)
+        public async Task<List<NoteViewModel>> GetAllMyNotes(string userId, string sortOrder)
         {
-            var myNotes = await _dbContext
+            //var myNotes = await _dbContext
+            //    .Notes
+            //    .Where(x => x.AuthorId == userId && x.IsInTrash == false)
+            //    .Select(x => new NoteViewModel
+            //    {
+            //        Id = x.Id.ToString(),
+            //        Title = x.Title,
+            //        CreatedOn = DateTime.Now,
+            //        Content = x.Content
+            //    }).ToListAsync();
+            //return myNotes;
+
+            IQueryable<Note> notesQuery = this._dbContext
                 .Notes
-                .Where(x => x.AuthorId == userId && x.IsInTrash == false)
+                .AsQueryable();
+
+            switch (sortOrder)
+            {
+                case "title_desc":
+                    notesQuery = notesQuery.OrderByDescending(n => n.Title);
+                    break;
+                case "content_asc":
+                    notesQuery = notesQuery.OrderBy(n => n.Content);
+                    break;
+                case "content_desc":
+                    notesQuery = notesQuery.OrderByDescending(n => n.Content);
+                    break;
+                case "date_desc":
+                    notesQuery = notesQuery.OrderByDescending(n => n.CreatedOn);
+                    break;
+                case "date_asc":
+                    notesQuery = notesQuery.OrderBy(n => n.CreatedOn);
+                    break;
+                default:
+                    notesQuery = notesQuery.OrderBy(n => n.Title);
+                    break;
+            }
+
+            var myNotes = await notesQuery
                 .Select(x => new NoteViewModel
                 {
                     Id = x.Id.ToString(),
@@ -110,6 +147,7 @@ namespace Notes.Services.Data
                     CreatedOn = DateTime.Now,
                     Content = x.Content
                 }).ToListAsync();
+
             return myNotes;
         }
 
