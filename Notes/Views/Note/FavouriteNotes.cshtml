@@ -1,0 +1,25 @@
+﻿@model IEnumerable<NoteViewModel>
+
+<h2>Favorite Notes</h2>
+
+@if (Model.Any())
+{
+    <div class="row">
+        @foreach (var note in Model)
+        {
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">@note.Title</h5>
+                        <p class="card-text">@note.Content</p>
+                        <!-- Additional details or actions for favorite notes -->
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+}
+else
+{
+    <p>No favorite notes found.</p>
+}

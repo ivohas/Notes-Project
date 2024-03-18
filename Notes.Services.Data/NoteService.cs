@@ -16,6 +16,39 @@ namespace Notes.Services.Data
             this._dbContext = dbContext;
         }
 
+        public async Task<bool> AddNoteToFavouriteAsync(string userId, string noteId)
+        {
+            var user = await _dbContext.Users.FirstOrDefaultAsync(u => u.NormalizedEmail == userId);
+
+            if (user == null)
+            {
+                return false;
+            }
+
+            var note = await _dbContext.Notes.FirstOrDefaultAsync(n => n.Id.ToString() == noteId);
+
+            if (note == null)
+            {
+                return false;
+            }
+
+            user.FavoriteNotes.Add(note);
+
+            try
+            {
+                _dbContext.Entry(user).State = EntityState.Modified;
+                await _dbContext.SaveChangesAsync();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                // Log the exception
+                // Handle the exception as needed
+                return false;
+            }
+
+        }
+
         public async Task CreateNewNote(NoteViewModel noteViewModel, string? userId)
         {
             Note newNote = new Note()
@@ -80,6 +113,19 @@ namespace Notes.Services.Data
             return myNotes;
         }
 
+        public async Task<IEnumerable<NoteViewModel>> GetFavouriteNotesAsync(string userId)
+        {
+            var favoriteNotes = await _dbContext.Favourites
+                .Where(f => f.UserId == userId)
+                .Select(x => new NoteViewModel
+                {
+                    Id = x.Note.Id.ToString(),
+                    Title = x.Note.Title,
+                    Content = x.Note.Content
+                }).ToListAsync();
+
+            return favoriteNotes;
+        }
 
         public async Task<NoteDetailsViewModel?> GetNoteDetailsByIdAsync(string id)
         {

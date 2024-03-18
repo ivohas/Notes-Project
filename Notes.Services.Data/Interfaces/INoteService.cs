@@ -24,5 +24,9 @@ namespace Notes.Services.Data.Interfaces
         Task<bool> MoveToTrashAsync(string noteId);
 
         Task<IEnumerable<NoteViewModel>> GetTrashNotesAsync();
+
+        Task<IEnumerable<NoteViewModel>> GetFavouriteNotesAsync(string userId);
+
+        Task<bool> AddNoteToFavouriteAsync(string userId, string noteId);
     }
 }

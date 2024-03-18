@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Notes.Data;
 
@@ -11,9 +12,10 @@ using Notes.Data;
 namespace Notes.Data.Migrations
 {
     [DbContext(typeof(NoteDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240318194641_AddedPropToUserAndNoteForFavouriteWatch")]
+    partial class AddedPropToUserAndNoteForFavouriteWatch
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -24,13 +26,13 @@ namespace Notes.Data.Migrations
 
             modelBuilder.Entity("ApplicationUserNote", b =>
                 {
-                    b.Property<Guid>("FavoriteNotesId")
+                    b.Property<Guid>("FavoriteWatchesId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("UsersWhoFavoritedId")
                         .HasColumnType("nvarchar(450)");
 
-                    b.HasKey("FavoriteNotesId", "UsersWhoFavoritedId");
+                    b.HasKey("FavoriteWatchesId", "UsersWhoFavoritedId");
 
                     b.HasIndex("UsersWhoFavoritedId");
 
@@ -372,7 +374,7 @@ namespace Notes.Data.Migrations
                 {
                     b.HasOne("Notes.Data.Models.Note", null)
                         .WithMany()
-                        .HasForeignKey("FavoriteNotesId")
+                        .HasForeignKey("FavoriteWatchesId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 

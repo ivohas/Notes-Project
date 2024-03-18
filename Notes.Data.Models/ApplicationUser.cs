@@ -7,7 +7,10 @@ namespace Notes.Data.Models
         public ApplicationUser()
         {
             Notes = new List<Note>();
+            this.FavoriteNotes = new HashSet<Note>();
         }
         public ICollection<Note> Notes { get; set; }
+
+        public virtual ICollection<Note> FavoriteNotes { get; set; }
     }
 }

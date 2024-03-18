@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Notes.Services.Data.Interfaces;
 using Notes.Web.ViewModels.Note;
+using System.Security.Claims;
 
 namespace Notes.Controllers
 {
@@ -120,6 +121,26 @@ namespace Notes.Controllers
         {
             var trashNotes = await _noteService.GetTrashNotesAsync();
             return View(trashNotes);
+        }
+
+        public async Task<IActionResult> AddToFavorite(Guid noteId)
+        {
+            string email = GetEmail();
+
+            await _noteService.AddNoteToFavouriteAsync(email, noteId.ToString());
+
+            return RedirectToAction("All", "Note");
+        }
+
+        public async Task<IActionResult> FavouriteNotes()
+        {
+            string email = GetEmail();
+
+            // Retrieve favorite notes for the current user using the service
+            var favoriteNoteViewModels = await _noteService.GetFavouriteNotesAsync(email);
+
+            // Pass the favorite notes to the view
+            return View(favoriteNoteViewModels);
         }
     }
 }

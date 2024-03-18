@@ -16,5 +16,15 @@ namespace Notes.Controllers
             }
             return id;
         }
+
+        protected string? GetEmail() 
+        {
+            string email = string.Empty;
+            if (User != null)
+            {
+                email = User.FindFirstValue(ClaimTypes.Email);
+            }
+            return email;
+        }
     }
 }

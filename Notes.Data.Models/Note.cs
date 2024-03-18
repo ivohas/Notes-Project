@@ -33,5 +33,7 @@ namespace Notes.Data.Models
 
         public bool IsInTrash{ get; set; }
 
+        public ICollection<ApplicationUser> UsersWhoFavorited { get; set; } = new HashSet<ApplicationUser>();
+
     }
 }
