@@ -18,7 +18,7 @@ namespace Notes.Services.Data
 
         public async Task<bool> AddNoteToFavouriteAsync(string userId, string noteId)
         {
-            var user = await _dbContext.Users.FirstOrDefaultAsync(u => u.NormalizedEmail == userId);
+            var user = await _dbContext.Users.FirstOrDefaultAsync(u => u.Id == userId);
 
             if (user == null)
             {

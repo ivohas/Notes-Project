@@ -125,19 +125,19 @@ namespace Notes.Controllers
 
         public async Task<IActionResult> AddToFavorite(Guid noteId)
         {
-            string email = GetEmail();
+            string userId = GetUserId();
 
-            await _noteService.AddNoteToFavouriteAsync(email, noteId.ToString());
+            await _noteService.AddNoteToFavouriteAsync(userId, noteId.ToString());
 
             return RedirectToAction("All", "Note");
         }
 
         public async Task<IActionResult> FavouriteNotes()
         {
-            string email = GetEmail();
+            string userId = GetUserId();
 
             // Retrieve favorite notes for the current user using the service
-            var favoriteNoteViewModels = await _noteService.GetFavouriteNotesAsync(email);
+            var favoriteNoteViewModels = await _noteService.GetFavouriteNotesAsync(userId);
 
             // Pass the favorite notes to the view
             return View(favoriteNoteViewModels);
