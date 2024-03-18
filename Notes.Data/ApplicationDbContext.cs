@@ -24,6 +24,7 @@ namespace Notes.Data
 
         public DbSet<Trash> Trash { get; set; }
 
+
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
@@ -38,6 +39,7 @@ namespace Notes.Data
                 .WithMany(u => u.Notes)
                 .HasForeignKey(n => n.AuthorId)
                 .OnDelete(DeleteBehavior.NoAction);
+
         }
     }
 }

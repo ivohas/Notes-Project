@@ -51,7 +51,6 @@ namespace Notes.Controllers
             }
         }
 
-        [HttpGet]
         public async Task<IActionResult> Details(string id) {
 
             NoteDetailsViewModel? noteDetailsViewModel = await this._noteService.GetNoteDetailsByIdAsync(id);
@@ -98,15 +97,15 @@ namespace Notes.Controllers
             }
             catch (Exception)
             {
-                return View(formModel);
+                return View(formModel); //Error
             }
             return this.RedirectToAction("Details", "Note", new { id });
         }
 
         [HttpPost]
-        public async Task<IActionResult> MoveToTrash(Guid id)
+        public async Task<IActionResult> MoveToTrash(string id)
         {
-            var result = await _noteService.MoveToTrashAsync(id.ToString());
+            var result = await _noteService.MoveToTrashAsync(id);
 
             if (!result)
             {

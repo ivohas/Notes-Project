@@ -147,7 +147,7 @@ namespace Notes.Services.Data
                 return false; // Note not found
             }
 
-            note.IsInTrash = true;
+            note.IsInTrash = !note.IsInTrash;
 
             await _dbContext.SaveChangesAsync();
 

@@ -264,6 +264,30 @@ namespace Notes.Data.Migrations
                     b.ToTable("Favourites");
                 });
 
+            modelBuilder.Entity("Notes.Data.Models.Folder", b =>
+                {
+                    b.Property<int>("FolderId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("FolderId"), 1L, 1);
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("NotesCount")
+                        .HasColumnType("int");
+
+                    b.HasKey("FolderId");
+
+                    b.ToTable("Folders");
+                });
+
             modelBuilder.Entity("Notes.Data.Models.Note", b =>
                 {
                     b.Property<Guid>("Id")
@@ -281,6 +305,9 @@ namespace Notes.Data.Migrations
 
                     b.Property<DateTime>("CreatedOn")
                         .HasColumnType("datetime2");
+
+                    b.Property<int>("FolderId")
+                        .HasColumnType("int");
 
                     b.Property<bool>("IsInTrash")
                         .HasColumnType("bit");
@@ -302,6 +329,8 @@ namespace Notes.Data.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("AuthorId");
+
+                    b.HasIndex("FolderId");
 
                     b.HasIndex("NotebookId");
 
@@ -431,6 +460,12 @@ namespace Notes.Data.Migrations
                         .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
+                    b.HasOne("Notes.Data.Models.Folder", "Folder")
+                        .WithMany("Notes")
+                        .HasForeignKey("FolderId")
+                        .OnDelete(DeleteBehavior.NoAction)
+                        .IsRequired();
+
                     b.HasOne("Notes.Data.Models.Notebook", null)
                         .WithMany("Notes")
                         .HasForeignKey("NotebookId");
@@ -440,6 +475,8 @@ namespace Notes.Data.Migrations
                         .HasForeignKey("TrashId");
 
                     b.Navigation("Author");
+
+                    b.Navigation("Folder");
                 });
 
             modelBuilder.Entity("Notes.Data.Models.Notebook", b =>
@@ -458,6 +495,11 @@ namespace Notes.Data.Migrations
                         .HasForeignKey("UserId");
 
                     b.Navigation("User");
+                });
+
+            modelBuilder.Entity("Notes.Data.Models.Folder", b =>
+                {
+                    b.Navigation("Notes");
                 });
 
             modelBuilder.Entity("Notes.Data.Models.Notebook", b =>

@@ -12,7 +12,4 @@
 <form method="get" asp-action="All" asp-controller="Note">
     <button type="submit" class="btn btn-primary" onclick="return confirm('Are you sure you want to go back?')">Back to List</button>
 </form>
-<form method="post" asp-action="MoveToTrash" asp-controller="Note" asp-route-id="@Model.Id">
-    <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure you want to move this note to the trash?')">Move to trash</button>
-</form>
 @* TODO: Edit button *@
