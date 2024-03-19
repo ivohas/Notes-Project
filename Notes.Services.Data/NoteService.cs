@@ -101,17 +101,8 @@ namespace Notes.Services.Data
                 return;
             }
 
-            _dbContext.Entry(note).State = EntityState.Detached;
-            var existingNote = await _dbContext.Notes.FirstOrDefaultAsync(x => x.Id == Guid.Parse(id));
-
-            if (existingNote == null)
-            {
-                return;
-            }
-
-            _dbContext.Notes.Remove(existingNote);
+            _dbContext.Notes.Remove(note);
             await _dbContext.SaveChangesAsync();
-
         }
 
         public async Task EditNoteByIdAndFormModelAsync(string id, NoteViewModel formModel)
