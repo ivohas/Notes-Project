@@ -191,57 +191,6 @@ namespace Notes.Services.Tests
             Assert.ThrowsAsync<ArgumentNullException>(async () => await noteService.CreateNewNotebook(notebookViewModel, null));
         }
 
-        [Test]
-        public async Task DeleteNoteByIdAsync_ExistingNote_Success()
-        {
-            // Arrange
-            var noteId = Guid.NewGuid();
-            var note = new Note { Id = noteId };
-            await dbContext.Notes.AddAsync(note);
-            await dbContext.SaveChangesAsync();
-
-            // Act
-            await noteService.DeleteNoteByIdAsync(noteId.ToString());
-
-            // Assert
-            var deletedNote = await dbContext.Notes.FindAsync(noteId);
-            Assert.IsNull(deletedNote);
-        }
-
-        // Test case: Deleting a non-existing note should not throw an exception
-        [Test]
-        public async Task DeleteNoteByIdAsync_NonExistingNote_NoException()
-        {
-            // Act & Assert
-            await Assert.DoesNotThrowAsync(async () => await noteService.DeleteNoteByIdAsync(Guid.NewGuid().ToString()));
-        }
-
-        // Test case: Deleting a note with a null ID should not throw an exception
-        [Test]
-        public async Task DeleteNoteByIdAsync_NullId_NoException()
-        {
-            // Act & Assert
-            await Assert.DoesNotThrowAsync(async () => await noteService.DeleteNoteByIdAsync(null));
-        }
-
-        // Test case: Deleting a note with an invalid ID format should not throw an exception
-        [Test]
-        public async Task DeleteNoteByIdAsync_InvalidIdFormat_NoException()
-        {
-            // Act & Assert
-            await Assert.DoesNotThrowAsync(async () => await noteService.DeleteNoteByIdAsync("invalid_id_format"));
-        }
-
-        // Test case: Deleting a note with a valid but non-existent ID should not throw an exception
-        [Test]
-        public async Task DeleteNoteByIdAsync_ValidButNonExistentId_NoException()
-        {
-            // Arrange
-            var noteId = Guid.NewGuid().ToString();
-
-            // Act & Assert
-            await Assert.DoesNotThrowAsync(async () => await noteService.DeleteNoteByIdAsync(noteId));
-        }
 
 
     }

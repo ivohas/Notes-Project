@@ -183,7 +183,7 @@ namespace Notes.Controllers
         {
             var userId = this.GetUserId();
             await this._noteService.CreateNewNotebook(notebookViewModel, userId);
-            return RedirectToAction("All", "Note");
+            return RedirectToAction("AllNotebooks", "Note");
         }
 
         [HttpGet]
