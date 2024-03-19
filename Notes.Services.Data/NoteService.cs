@@ -17,36 +17,10 @@ namespace Notes.Services.Data
             this._dbContext = dbContext;
         }
 
-        public async Task<bool> AddNoteToFavouriteAsync(string userId, string noteId)
+        public async Task AddNoteToFavouriteAsync(string userId, string noteId)
         {
-            var user = await _dbContext.Users.FirstOrDefaultAsync(u => u.Id == userId);
-
-            if (user == null)
-            {
-                return false;
-            }
-
-            var note = await _dbContext.Notes.FirstOrDefaultAsync(n => n.Id.ToString() == noteId);
-
-            if (note == null)
-            {
-                return false;
-            }
-
-            user.FavoriteNotes.Add(note);
-
-            try
-            {
-                _dbContext.Entry(user).State = EntityState.Modified;
-                await _dbContext.SaveChangesAsync();
-                return true;
-            }
-            catch (Exception ex)
-            {
-                // Log the exception
-                // Handle the exception as needed
-                return false;
-            }
+            await this._dbContext.Favourites.AddAsync(new Favourite() { NoteId = Guid.Parse(noteId), UserId = userId });
+            await this._dbContext.SaveChangesAsync();
 
         }
 
@@ -251,6 +225,29 @@ namespace Notes.Services.Data
 
         }
 
+        public async Task<bool> RemoveNoteFromFavouriteAsync(string userId, string noteId)
+        {
+            var favourite = await _dbContext.Favourites.FirstOrDefaultAsync(x => x.UserId == userId && x.NoteId.ToString() == noteId);
+
+            if (favourite == null)
+            {
+                return false;
+            }
+
+            _dbContext.Entry(favourite).State = EntityState.Detached;
+            var existingFavourite = await _dbContext.Favourites.FirstOrDefaultAsync(x => x.UserId == userId && x.NoteId.ToString() == noteId);
+
+            if (existingFavourite == null)
+            {
+                return false;
+            }
+
+            _dbContext.Favourites.Remove(existingFavourite);
+            await _dbContext.SaveChangesAsync();
+
+            return true;
+
+        }
     }
 
 }

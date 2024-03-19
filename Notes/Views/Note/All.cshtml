@@ -36,7 +36,7 @@
                                 <button type="submit" class="btn btn-warning">Pin</button>
                             </form>
 
-                            <form method="post" asp-action="AddToFavorite" asp-controller="Note" asp-route-id="@item.Id">
+                            <form method="post" asp-action="AddToFavorite" asp-controller="Note" asp-route-id="@item.Id.ToString()">
                                 <button type="submit" class="btn btn-info">Favorite</button>
                             </form>
 

@@ -5,6 +5,7 @@ using Microsoft.EntityFrameworkCore;
 using Notes.Services.Data.Interfaces;
 using Notes.Web.ViewModels.Note;
 using System.Security.Claims;
+using System.Security.Cryptography.X509Certificates;
 
 namespace Notes.Controllers
 {
@@ -131,11 +132,11 @@ namespace Notes.Controllers
             return View(trashNotes);
         }
 
-        public async Task<IActionResult> AddToFavorite(Guid noteId)
+        public async Task<IActionResult> AddToFavorite(string id)
         {
             string userId = GetUserId();
 
-            await _noteService.AddNoteToFavouriteAsync(userId, noteId.ToString());
+            await _noteService.AddNoteToFavouriteAsync(userId, id.ToString());
 
             return RedirectToAction("All", "Note");
         }
@@ -149,6 +150,23 @@ namespace Notes.Controllers
 
             // Pass the favorite notes to the view
             return View(favoriteNoteViewModels);
+        }
+
+        public async Task<IActionResult> RemoveFromFavourite(string id)
+        {
+            
+
+            try
+            {
+                string userId = GetUserId();
+
+                await _noteService.RemoveNoteFromFavouriteAsync(userId, id);
+                return RedirectToAction("FavouriteNotes", "Note");
+            }
+            catch
+            {
+                return StatusCode(500, "An error occurred while deleting the note.");
+            }
         }
     }
 }

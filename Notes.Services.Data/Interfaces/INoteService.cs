@@ -27,6 +27,8 @@ namespace Notes.Services.Data.Interfaces
 
         Task<IEnumerable<NoteViewModel>> GetFavouriteNotesAsync(string userId);
 
-        Task<bool> AddNoteToFavouriteAsync(string userId, string noteId);
+        Task AddNoteToFavouriteAsync(string userId, string noteId);
+
+        Task<bool> RemoveNoteFromFavouriteAsync(string userId, string noteId);
     }
 }
