@@ -23,7 +23,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Notes.Data.Models", "Notes.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Notes.Services.Data", "Notes.Services.Data\Notes.Services.Data.csproj", "{25B269F5-515A-4CCC-B4B6-FF6E1A0D7D8A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Notes.Web.ViewModels", "Notes.Web.ViewModels\Notes.Web.ViewModels.csproj", "{622489FF-C4F0-48E0-9C25-BA6F9C35B88E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Notes.Web.ViewModels", "Notes.Web.ViewModels\Notes.Web.ViewModels.csproj", "{622489FF-C4F0-48E0-9C25-BA6F9C35B88E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Notes.Services.Tests", "Notes.Services.Tests\Notes.Services.Tests.csproj", "{F5FDEC8D-9775-48BA-BC73-A1F29F8DB0D9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -55,6 +57,10 @@ Global
 		{622489FF-C4F0-48E0-9C25-BA6F9C35B88E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{622489FF-C4F0-48E0-9C25-BA6F9C35B88E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{622489FF-C4F0-48E0-9C25-BA6F9C35B88E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F5FDEC8D-9775-48BA-BC73-A1F29F8DB0D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F5FDEC8D-9775-48BA-BC73-A1F29F8DB0D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F5FDEC8D-9775-48BA-BC73-A1F29F8DB0D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F5FDEC8D-9775-48BA-BC73-A1F29F8DB0D9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -66,6 +72,7 @@ Global
 		{1E8538DE-F89E-466E-8B7E-30EA91AFE5D6} = {947EA04F-84C4-45F9-BB31-F30522DE2EDE}
 		{25B269F5-515A-4CCC-B4B6-FF6E1A0D7D8A} = {2C4E87EF-0B7D-48A0-A47E-E7478C25CA9E}
 		{622489FF-C4F0-48E0-9C25-BA6F9C35B88E} = {8B2E6EEC-9DE3-4918-8E8E-04FE121B0753}
+		{F5FDEC8D-9775-48BA-BC73-A1F29F8DB0D9} = {9AF0DC86-ADDA-4D65-BBA6-44C599D757DE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E67EA504-65EE-47DA-844F-322986772821}

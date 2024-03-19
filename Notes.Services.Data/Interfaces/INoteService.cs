@@ -39,5 +39,6 @@ namespace Notes.Services.Data.Interfaces
 
         Task<bool> AddNoteToNotebookAsync(Guid notebookId, Note note);
 
+
     }
 }

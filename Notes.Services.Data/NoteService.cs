@@ -26,7 +26,7 @@ namespace Notes.Services.Data
 
         public async Task<bool> AddNoteToNotebookAsync(Guid notebookId, Note note)
         {
-            var notebook = await _dbContext.Notebooks.FirstAsync(n => n.Id.ToString() == notebookId.ToString());
+            var notebook = await _dbContext.Notebooks.FirstOrDefaultAsync(n => n.Id.ToString() == notebookId.ToString());
 
             if (notebook == null)
             {
@@ -46,6 +46,16 @@ namespace Notes.Services.Data
 
         public async Task CreateNewNote(NoteViewModel noteViewModel, string? userId)
         {
+            if (noteViewModel == null)
+            {
+                throw new ArgumentNullException(nameof(noteViewModel));
+            }
+
+            if (userId == null)
+            {
+                throw new ArgumentNullException(nameof(userId));
+            }
+
             Note newNote = new Note()
             {
                 Content = noteViewModel.Content,
@@ -53,20 +63,31 @@ namespace Notes.Services.Data
                 CreatedOn = DateTime.Now,
                 AuthorId = userId
             };
-            // add author 
 
             await this._dbContext.Notes.AddAsync(newNote);
             await this._dbContext.SaveChangesAsync();
         }
 
+
         public async Task CreateNewNotebook(NotebookViewModel notebookViewModel, string? userId)
         {
+            if (notebookViewModel == null)
+            {
+                throw new ArgumentNullException(nameof(notebookViewModel));
+            }
+
+            if (userId == null)
+            {
+                throw new ArgumentNullException(nameof(userId));
+            }
+
             Notebook newNotebook = new Notebook()
             {
                 Description = notebookViewModel.Description,
                 Title = notebookViewModel.Title,
                 AuthorId = userId
             };
+
             await this._dbContext.Notebooks.AddAsync(newNotebook);
             await this._dbContext.SaveChangesAsync();
         }
@@ -308,6 +329,8 @@ namespace Notes.Services.Data
             return true;
 
         }
+
+
     }
 
 }
