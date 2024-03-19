@@ -1,0 +1,29 @@
+﻿@model Notes.Web.ViewModels.Note.AddNoteToNotebookViewModel
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">Add Existing Notes to Notebook</div>
+
+                <div class="card-body">
+                    <form asp-action="AddSelectedNotesToNotebook" asp-controller="Note">
+                        <input type="hidden" name="notebookId" value="@Model.NotebookId" />
+
+                        <div class="form-group">
+                            <label for="selectedNotes">Select Notes:</label>
+                            <select name="selectedNotes" id="selectedNotes" multiple class="form-control">
+                                @foreach (var note in Model.AllNotes)
+                                {
+                                    <option value="@note.Id">@note.Title</option>
+                                }
+                            </select>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">Add Selected Notes</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

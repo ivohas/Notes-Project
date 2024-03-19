@@ -52,12 +52,24 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/Desktop/aaaaaaaaaaaa/Notes-Project/Notes/Views/Note/AddNoteToNotebook.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTm90ZVxBZGROb3RlVG9Ob3RlYm9vay5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/Desktop/aaaaaaaaaaaa/Notes-Project/Notes/Views/Note/All.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTm90ZVxBbGwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/Desktop/aaaaaaaaaaaa/Notes-Project/Notes/Views/Note/AllNotebooks.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTm90ZVxBbGxOb3RlYm9va3MuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/Desktop/aaaaaaaaaaaa/Notes-Project/Notes/Views/Note/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTm90ZVxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Desktop/aaaaaaaaaaaa/Notes-Project/Notes/Views/Note/CreateNotebook.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTm90ZVxDcmVhdGVOb3RlYm9vay5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/Desktop/aaaaaaaaaaaa/Notes-Project/Notes/Views/Note/Details.cshtml]

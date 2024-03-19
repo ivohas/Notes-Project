@@ -37,6 +37,19 @@
                                 </ul>
                             </div>
                         </li>
+                        <li class="nav-item dropdown">
+                            <div class="dropdown">
+                                <button class="btn dropdown-toggle text-dark" type="button" data-bs-toggle="dropdown">Notebooks</button>
+                                <ul class="dropdown-menu">
+                                    <li class="nav-item">
+                                        <a class="nav-link text-dark" asp-area="" asp-controller="Note" asp-action="CreateNotebook">Create Notebook</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link text-dark" asp-area="" asp-controller="Note" asp-action="AllNotebooks">All Notebooks</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
 
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Privacy</a>

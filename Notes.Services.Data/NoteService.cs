@@ -24,6 +24,26 @@ namespace Notes.Services.Data
 
         }
 
+        public async Task<bool> AddNoteToNotebookAsync(Guid notebookId, Note note)
+        {
+            var notebook = await _dbContext.Notebooks.FirstAsync(n => n.Id.ToString() == notebookId.ToString());
+
+            if (notebook == null)
+            {
+                // Notebook not found, handle the error (e.g., return false)
+                return false;
+            }
+
+            // Add the note to the notebook
+            notebook.Notes.Add(note);
+
+            // Save changes to the database
+            await _dbContext.SaveChangesAsync();
+
+            // Return true to indicate successful addition
+            return true;
+        }
+
         public async Task CreateNewNote(NoteViewModel noteViewModel, string? userId)
         {
             Note newNote = new Note()
@@ -36,6 +56,18 @@ namespace Notes.Services.Data
             // add author 
 
             await this._dbContext.Notes.AddAsync(newNote);
+            await this._dbContext.SaveChangesAsync();
+        }
+
+        public async Task CreateNewNotebook(NotebookViewModel notebookViewModel, string? userId)
+        {
+            Notebook newNotebook = new Notebook()
+            {
+                Description = notebookViewModel.Description,
+                Title = notebookViewModel.Title,
+                AuthorId = userId
+            };
+            await this._dbContext.Notebooks.AddAsync(newNotebook);
             await this._dbContext.SaveChangesAsync();
         }
 
@@ -71,6 +103,29 @@ namespace Notes.Services.Data
             note.Content = formModel.Content;
 
             await this._dbContext.SaveChangesAsync();
+        }
+
+        public async Task<List<NotebookViewModel>> GetAllMyNotebooks(string? v)
+        {
+            var myNotebooks = await _dbContext
+                .Notebooks
+                .Where(x => x.AuthorId==v)
+                .Select(x => new NotebookViewModel
+                {
+                    Id = x.Id.ToString(),
+                    Description = x.Description,
+                    Title = x.Title,
+                    Notes = x.Notes.Select(x => new NoteViewModel
+                    {
+                        Id = x.Id.ToString(),
+                        Content = x.Content,
+                        Title = x.Title,
+                        CreatedOn = x.CreatedOn,
+                    }).ToList()
+                })
+                .ToListAsync();
+
+            return myNotebooks;
         }
 
         public async Task<List<NoteViewModel>> GetAllMyNotes(string userId, string sortOrder)
@@ -137,6 +192,11 @@ namespace Notes.Services.Data
                 }).ToListAsync();
 
             return favoriteNotes;
+        }
+
+        public async Task<Note> GetNoteByIdAsync(string noteId)
+        {
+            return await _dbContext.Notes.FirstAsync(n => n.Id.ToString() == noteId);
         }
 
         public async Task<NoteDetailsViewModel?> GetNoteDetailsByIdAsync(string id)

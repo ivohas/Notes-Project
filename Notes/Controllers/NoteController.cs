@@ -168,5 +168,86 @@ namespace Notes.Controllers
                 return StatusCode(500, "An error occurred while deleting the note.");
             }
         }
+
+        [HttpGet]
+        public IActionResult CreateNotebook()
+        {
+
+            //TODO: add validation to the view model and in the db
+            NotebookViewModel notebookViewModel = new NotebookViewModel();
+            return View(notebookViewModel);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> CreateNotebook(NotebookViewModel notebookViewModel)
+        {
+            var userId = this.GetUserId();
+            await this._noteService.CreateNewNotebook(notebookViewModel, userId);
+            return RedirectToAction("All", "Note");
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> AllNotebooks(string sortOrder)
+        {
+            //List<NoteViewModel> allNotes = await this._noteService.GetAllMyNotes(this.GetUserId());
+            //return View(allNotes);
+
+            var notebooks = await _noteService.GetAllMyNotebooks(this.GetUserId());
+
+            return View(notebooks);
+        }
+
+        public async Task<IActionResult> AddExistingNoteToNotebook(Guid notebookId)
+        {
+            var allNotesTask = _noteService.GetAllMyNotes(this.GetUserId(), string.Empty); // Assuming _noteService is your service for notes
+            var allNotes = await allNotesTask;
+
+            var viewModel = new AddNoteToNotebookViewModel
+            {
+                NotebookId = notebookId,
+                AllNotes = allNotes
+            };
+
+            return View("AddNoteToNotebook", viewModel);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> AddSelectedNotesToNotebook(Guid notebookId, List<Guid> selectedNotes)
+        {
+            // Perform validation and error handling as needed
+            if (notebookId == Guid.Empty)
+            {
+                // Handle invalid notebook ID
+                return BadRequest("Invalid notebook ID");
+            }
+
+            if (selectedNotes == null || !selectedNotes.Any())
+            {
+                // Handle no notes selected
+                return BadRequest("No notes selected");
+            }
+
+            // Iterate over the selected note IDs and add them to the notebook
+            foreach (var noteId in selectedNotes)
+            {
+                // Retrieve the note from the database using its ID
+                var note = await _noteService.GetNoteByIdAsync(noteId.ToString());
+
+                if (note != null)
+                {
+                    // Add the note to the notebook
+                    await _noteService.AddNoteToNotebookAsync(notebookId, note);
+                }
+                else
+                {
+                    // Handle case where note with specified ID is not found
+                    return BadRequest($"Note with ID {noteId} not found");
+                }
+            }
+
+            // Redirect to a different action method or view after adding the notes
+            return RedirectToAction("AllNotebooks", "Note");
+        }
+
     }
 }

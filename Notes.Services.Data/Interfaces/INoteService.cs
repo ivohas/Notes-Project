@@ -30,5 +30,14 @@ namespace Notes.Services.Data.Interfaces
         Task AddNoteToFavouriteAsync(string userId, string noteId);
 
         Task<bool> RemoveNoteFromFavouriteAsync(string userId, string noteId);
+
+        Task CreateNewNotebook(NotebookViewModel notebookViewModel, string? userId);
+
+        Task<List<Notes.Web.ViewModels.Note.NotebookViewModel>> GetAllMyNotebooks(string? v);
+
+        Task<Note> GetNoteByIdAsync(string noteId);
+
+        Task<bool> AddNoteToNotebookAsync(Guid notebookId, Note note);
+
     }
 }

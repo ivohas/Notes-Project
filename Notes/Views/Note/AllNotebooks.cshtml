@@ -1,0 +1,43 @@
+﻿@model IEnumerable<NotebookViewModel>
+
+<h2>List of Notebooks</h2>
+
+@if (Model.Any())
+{
+    <div class="row">
+        @foreach (var notebook in Model)
+        {
+            <div class="col-md-6 mb-4">
+                <div class="card" style="width: 100%;">
+                    <div class="card-body">
+                        <h5 class="card-title">@notebook.Title</h5>
+                        <p class="card-text">@notebook.Description</p>
+                        <h6>Notes:</h6>
+                        <ul>
+                            @foreach (var note in notebook.Notes)
+                            {
+                                <li>@note.Title - @note.Content</li>
+                            }
+                        </ul>
+                        <hr />
+                        <h6>Add Existing Note to this Notebook:</h6>
+                        <a asp-action="AddExistingNoteToNotebook" asp-controller="Note" asp-route-notebookId="@notebook.Id" class="btn btn-primary">Add Existing Note</a>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+}
+else
+{
+    <p>No notebooks found.</p>
+}
+
+@functions {
+    string TruncateText(string text, int length)
+    {
+        if (text.Length <= length)
+            return text;
+        return text.Substring(0, length) + "...";
+    }
+}
