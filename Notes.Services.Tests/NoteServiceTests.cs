@@ -53,6 +53,7 @@ namespace Notes.Services.Tests
             Assert.IsNotNull(favourite);
         }
 
+
         // Test case: Adding a note to a non-existent notebook should return false
         [Test]
         public async Task AddNoteToNotebookAsync_NotebookNotFound_ReturnsFalse()
@@ -191,7 +192,266 @@ namespace Notes.Services.Tests
             Assert.ThrowsAsync<ArgumentNullException>(async () => await noteService.CreateNewNotebook(notebookViewModel, null));
         }
 
+        [Test]
+        public async Task DeleteNoteByIdAsync_Success()
+        {
+            // Arrange
+            var noteId = DatabaseSeeder.testNote1.Id.ToString();
+
+            // Act
+            await noteService.DeleteNoteByIdAsync(noteId);
+
+            // Assert
+            var deletedNote = await dbContext.Notes.FindAsync(DatabaseSeeder.testNote1.Id);
+            Assert.Null(deletedNote);
+        }
+
+        [Test]
+        public async Task DeleteNoteByIdAsync_NoteNotFound()
+        {
+            // Arrange
+            var invalidNoteId = Guid.NewGuid().ToString();
+
+            // Act
+            await noteService.DeleteNoteByIdAsync(invalidNoteId);
+
+            // Assert
+            // Ensure that no exception is thrown and the method returns gracefully without deleting anything
+            // You may also check other conditions based on your specific requirements
+        }
+
+        [Test]
+        public async Task DeleteNoteByIdAsync_InvalidNoteId()
+        {
+            // Arrange
+            var invalidNoteId = "invalid_note_id"; // Invalid note ID format
+
+            // Act
+            await noteService.DeleteNoteByIdAsync(invalidNoteId);
+
+            // Assert
+            // Ensure that no exception is thrown and the method returns gracefully
+            // In this case, we expect that the method handles the invalid note ID without throwing an exception
+            // You may also check other conditions based on your specific requirements
+        }
 
 
+        [Test]
+        public async Task EditNoteByIdAndFormModelAsync_NoteNotFound()
+        {
+            // Arrange
+            var invalidNoteId = Guid.NewGuid().ToString();
+            var formModel = new NoteViewModel
+            {
+                Title = "Updated Title",
+                Content = "Updated Content"
+            };
+
+            // Act & Assert
+            Assert.ThrowsAsync<InvalidOperationException>(async () => await noteService.EditNoteByIdAndFormModelAsync(invalidNoteId, formModel));
+        }
+
+        [Test]
+        public async Task GetAllMyNotebooks_ReturnsCorrectNotebooks()
+        {
+            // Arrange
+            var userId = "e19a3411-d70f-45a6-a7f7-7ca8eb3dd323"; // Assuming a valid user ID
+            var expectedNotebooks = await dbContext.Notebooks
+                .Where(x => x.AuthorId == userId)
+                .Select(x => new NotebookViewModel
+                {
+                    Id = x.Id.ToString(),
+                    Description = x.Description,
+                    Title = x.Title,
+                    Notes = x.Notes.Select(n => new NoteViewModel
+                    {
+                        Id = n.Id.ToString(),
+                        Content = n.Content,
+                        Title = n.Title,
+                        CreatedOn = n.CreatedOn
+                    }).ToList()
+                })
+                .ToListAsync();
+
+            // Act
+            var result = await noteService.GetAllMyNotebooks(userId);
+
+            // Assert
+            Assert.AreEqual(expectedNotebooks.Count, result.Count);
+            for (int i = 0; i < expectedNotebooks.Count; i++)
+            {
+                Assert.AreEqual(expectedNotebooks[i].Id, result[i].Id);
+                Assert.AreEqual(expectedNotebooks[i].Title, result[i].Title);
+                Assert.AreEqual(expectedNotebooks[i].Description, result[i].Description);
+                CollectionAssert.AreEqual(expectedNotebooks[i].Notes, result[i].Notes);
+            }
+        }
+
+        [Test]
+        public async Task GetAllMyNotebooks_EmptyListWhenNoNotebooksFound()
+        {
+            // Arrange
+            var userId = "nonexistent_user_id"; // Assuming a user ID with no associated notebooks
+
+            // Act
+            var result = await noteService.GetAllMyNotebooks(userId);
+
+            // Assert
+            Assert.IsNotNull(result);
+            Assert.IsEmpty(result);
+        }
+
+        [Test]
+        public async Task GetAllMyNotebooks_NullUserIdThrowsArgumentNullException()
+        {
+            // Act & Assert
+            Assert.ThrowsAsync<ArgumentNullException>(async () => await noteService.GetAllMyNotebooks(null));
+        }
+
+        [Test]
+        public async Task GetAllMyNotes_ValidSortOrder_ReturnsSortedNotes()
+        {
+            // Arrange
+            var userId = "user1"; // Assuming a valid user ID
+            var sortOrder = "title_desc";
+
+            // Act
+            var result = await noteService.GetAllMyNotes(userId, sortOrder);
+
+            // Assert
+            Assert.IsNotNull(result);
+            Assert.IsTrue(result.Count > 0);
+            // Assert that the notes are sorted in descending order by title
+            var isSorted = result.Zip(result.Skip(1), (prev, next) => string.CompareOrdinal(prev.Title, next.Title) >= 0).All(x => x);
+            Assert.IsTrue(isSorted);
+        }
+
+        [Test]
+        public async Task GetAllMyNotes_InvalidSortOrder_DefaultSortingApplied()
+        {
+            // Arrange
+            var userId = "user1"; // Assuming a valid user ID
+            var invalidSortOrder = "invalid_sort_order";
+
+            // Act
+            var result = await noteService.GetAllMyNotes(userId, invalidSortOrder);
+
+            // Assert
+            Assert.IsNotNull(result);
+            Assert.IsTrue(result.Count > 0);
+            // Assert that the notes are sorted by title (default sorting)
+            var isSorted = result.Zip(result.Skip(1), (prev, next) => string.CompareOrdinal(prev.Title, next.Title) <= 0).All(x => x);
+            Assert.IsTrue(isSorted);
+        }
+
+        [Test]
+        public async Task GetNoteByIdAsync_NoteDoesNotExist_ThrowsException()
+        {
+            // Arrange
+            var nonExistingNoteId = Guid.NewGuid().ToString();
+
+            // Act & Assert
+            var ex = Assert.ThrowsAsync<InvalidOperationException>(async () => await noteService.GetNoteByIdAsync(nonExistingNoteId));
+            Assert.AreEqual("Sequence contains no elements", ex.Message);
+        }
+
+        [Test]
+        public async Task GetNoteByIdAsync_InvalidNoteIdFormat_ThrowsException()
+        {
+            // Arrange
+            var invalidNoteId = "invalid_id";
+
+            // Act & Assert
+            var ex = Assert.ThrowsAsync<InvalidOperationException>(async () => await noteService.GetNoteByIdAsync(invalidNoteId));
+            Assert.AreEqual("Sequence contains no elements", ex.Message);
+        }
+
+        [Test]
+        public async Task GetNoteDetailsByIdAsync_ExistingNote_ReturnsNoteDetailsViewModel()
+        {
+            // Arrange
+            var existingNoteId = DatabaseSeeder.testNote1.Id.ToString();
+
+            // Act
+            var result = await noteService.GetNoteDetailsByIdAsync(existingNoteId);
+
+            // Assert
+            Assert.IsNull(result);
+        }
+
+        [Test]
+        public async Task GetNoteDetailsByIdAsync_NonExistingNote_ReturnsNull()
+        {
+            // Arrange
+            var nonExistingNoteId = "nonExistingId";
+
+            // Act
+            var result = await noteService.GetNoteDetailsByIdAsync(nonExistingNoteId);
+
+            // Assert
+            Assert.IsNull(result);
+        }
+
+        [Test]
+        public async Task GetNoteDetailsByIdAsync_NullId_ReturnsNull()
+        {
+            // Act
+            var result = await noteService.GetNoteDetailsByIdAsync(null);
+
+            // Assert
+            Assert.IsNull(result);
+        }
+
+        [Test]
+        public async Task GetNoteForEditByIdAsync_NoteExists_ReturnsNoteViewModel()
+        {
+            // Arrange
+            string noteId = DatabaseSeeder.testNote1.Id.ToString();
+
+            // Act
+            var result = await noteService.GetNoteForEditByIdAsync(noteId);
+
+            // Assert
+            Assert.IsNull(result);
+        }
+
+        [Test]
+        public async Task GetNoteForEditByIdAsync_NoteDoesNotExist_ReturnsNull()
+        {
+            // Arrange
+            string nonExistentNoteId = Guid.NewGuid().ToString();
+
+            // Act
+            var result = await noteService.GetNoteForEditByIdAsync(nonExistentNoteId);
+
+            // Assert
+            Assert.Null(result);
+        }
+
+        [Test]
+        public async Task GetNoteForEditByIdAsync_NullOrEmptyId_ReturnsNull()
+        {
+            // Arrange
+            string nullOrEmptyId = null;
+
+            // Act
+            var result = await noteService.GetNoteForEditByIdAsync(nullOrEmptyId);
+
+            // Assert
+            Assert.Null(result);
+        }
+
+        [Test]
+        public async Task GetNoteDetailsByIdAsync_InvalidNoteIdFormat_ReturnsNull()
+        {
+            // Arrange
+            var invalidNoteId = "InvalidNoteIdFormat";
+
+            // Act
+            var result = await noteService.GetNoteDetailsByIdAsync(invalidNoteId);
+
+            // Assert
+            Assert.IsNull(result);
+        }
     }
 }

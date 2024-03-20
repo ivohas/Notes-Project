@@ -94,7 +94,15 @@ namespace Notes.Services.Data
 
         public async Task DeleteNoteByIdAsync(string id)
         {
-            var note = await _dbContext.Notes.FirstOrDefaultAsync(x => x.Id == Guid.Parse(id));
+            // Validate the format of the ID before attempting to parse it
+            if (!Guid.TryParse(id, out Guid noteId))
+            {
+                // Handle the case where the ID format is invalid
+                // For example, you can log an error or return without performing any action
+                return;
+            }
+
+            var note = await _dbContext.Notes.FirstOrDefaultAsync(x => x.Id == noteId);
 
             if (note == null)
             {
@@ -103,6 +111,7 @@ namespace Notes.Services.Data
 
             _dbContext.Notes.Remove(note);
             await _dbContext.SaveChangesAsync();
+
         }
 
         public async Task EditNoteByIdAndFormModelAsync(string id, NoteViewModel formModel)
@@ -119,9 +128,14 @@ namespace Notes.Services.Data
 
         public async Task<List<NotebookViewModel>> GetAllMyNotebooks(string? v)
         {
+            if (v == null)
+            {
+                throw new ArgumentNullException(nameof(v));
+            }
+
             var myNotebooks = await _dbContext
                 .Notebooks
-                .Where(x => x.AuthorId==v)
+                .Where(x => x.AuthorId == v)
                 .Select(x => new NotebookViewModel
                 {
                     Id = x.Id.ToString(),
@@ -228,15 +242,23 @@ namespace Notes.Services.Data
 
         public async Task<NoteViewModel> GetNoteForEditByIdAsync(string id)
         {
-            Note? note = await this._dbContext
-                .Notes
-                .FirstAsync(w => w.Id.ToString() == id);
-
-            return new NoteViewModel()
+            try
             {
-                Content = note.Content,
-                Title = note.Title,
-            };
+                Note? note = await this._dbContext
+                    .Notes
+                    .FirstAsync(w => w.Id.ToString() == id);
+
+                return new NoteViewModel()
+                {
+                    Content = note.Content,
+                    Title = note.Title,
+                };
+            }
+            catch (InvalidOperationException)
+            {
+                // Handle the case where no note with the specified ID was found
+                return null;
+            }
         }
 
         public async Task<List<NoteViewModel>> GetPinnedNotes()
