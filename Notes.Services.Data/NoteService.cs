@@ -195,6 +195,7 @@ namespace Notes.Services.Data
             }
 
             var myNotes = await notesQuery
+                .Where(x => x.AuthorId == userId && x.IsInTrash == false)
                 .Select(x => new NoteViewModel
                 {
                     Id = x.Id.ToString(),
