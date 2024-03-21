@@ -16,7 +16,7 @@
                         <ul>
                             @foreach (var note in notebook.Notes)
                             {
-                                <li>@note.Title - @note.Content</li>
+                                <li>@note.Title - @note.Content <a asp-action="Details" asp-controller="Note" asp-route-id="@note.Id">View note</a></li>
                             }
                         </ul>
                         <hr />
