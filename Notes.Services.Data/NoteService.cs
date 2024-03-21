@@ -292,7 +292,7 @@ namespace Notes.Services.Data
 
         public async Task<bool> MoveToTrashAsync(string noteId)
         {
-            var note = await _dbContext.Notes.FirstAsync(n => n.Id.ToString() == noteId);
+            var note = await _dbContext.Notes.FirstOrDefaultAsync(n => n.Id.ToString() == noteId);
 
             if (note == null)
             {

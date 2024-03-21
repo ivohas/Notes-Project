@@ -453,5 +453,215 @@ namespace Notes.Services.Tests
             // Assert
             Assert.IsNull(result);
         }
+
+        [Test]
+        public async Task GetPinnedNotes_ReturnsCorrectCount()
+        {
+            // Act
+            var pinnedNotes = await noteService.GetPinnedNotes();
+
+            // Assert
+            Assert.AreEqual(0, pinnedNotes.Count); // Assuming no notes are pinned in the seeded data
+        }
+
+        [Test]
+        public async Task GetPinnedNotes_ReturnsNoPinnedNotesWhenAllInTrash()
+        {
+            // Arrange
+            // Move all test notes to trash
+            foreach (var note in dbContext.Notes)
+            {
+                note.IsInTrash = true;
+            }
+            await dbContext.SaveChangesAsync();
+
+            // Act
+            var pinnedNotes = await noteService.GetPinnedNotes();
+
+            // Assert
+            Assert.AreEqual(0, pinnedNotes.Count);
+        }
+
+        [Test]
+        public async Task AddNoteToFavouriteAsync_AddsToFavoritesSuccessfully()
+        {
+            // Arrange
+            var userId = "user123";
+            var noteId = Guid.NewGuid().ToString();
+
+            // Act
+            await noteService.AddNoteToFavouriteAsync(userId, noteId);
+
+            // Assert
+            var favourite = await dbContext.Favourites.FirstOrDefaultAsync(f => f.UserId == userId && f.NoteId == Guid.Parse(noteId));
+            Assert.NotNull(favourite);
+        }
+
+        [Test]
+        public async Task AddNoteToFavouriteAsync_AddsToFavoritesWithCorrectUserId()
+        {
+            // Arrange
+            var userId = "user456";
+            var noteId = Guid.NewGuid().ToString();
+
+            // Act
+            await noteService.AddNoteToFavouriteAsync(userId, noteId);
+
+            // Assert
+            var favourite = await dbContext.Favourites.FirstOrDefaultAsync(f => f.UserId == userId && f.NoteId == Guid.Parse(noteId));
+            Assert.NotNull(favourite);
+            Assert.AreEqual(userId, favourite.UserId);
+        }
+
+        [Test]
+        public async Task AddNoteToFavouriteAsync_AddsToFavoritesWithCorrectNoteId()
+        {
+            // Arrange
+            var userId = "user789";
+            var noteId = Guid.NewGuid().ToString();
+
+            // Act
+            await noteService.AddNoteToFavouriteAsync(userId, noteId);
+
+            // Assert
+            var favourite = await dbContext.Favourites.FirstOrDefaultAsync(f => f.UserId == userId && f.NoteId == Guid.Parse(noteId));
+            Assert.NotNull(favourite);
+            Assert.AreEqual(Guid.Parse(noteId), favourite.NoteId);
+        }
+
+        [Test]
+        public async Task GetFavouriteNotesAsync_ReturnsCorrectCount()
+        {
+            // Arrange
+            string userId = "e19a3411-d70f-45a6-a7f7-7ca8eb3dd323";
+
+            // Act
+            var favoriteNotes = await noteService.GetFavouriteNotesAsync(userId);
+
+            // Assert
+            Assert.AreEqual(0, favoriteNotes.Count()); // Assuming no favorite notes exist in the seeded data
+        }
+
+        [Test]
+        public async Task GetFavouriteNotesAsync_WithValidUserId_ReturnsCorrectNotes()
+        {
+            // Arrange
+            string userId = "e19a3411-d70f-45a6-a7f7-7ca8eb3dd323";
+
+            // Act
+            var favoriteNotes = await noteService.GetFavouriteNotesAsync(userId);
+
+            // Assert
+            Assert.IsNotNull(favoriteNotes);
+            Assert.AreEqual(0, favoriteNotes.Count()); // Assuming no favorite notes exist in the seeded data
+        }
+
+        [Test]
+        public async Task GetFavouriteNotesAsync_WithInvalidUserId_ReturnsEmptyList()
+        {
+            // Arrange
+            string userId = "nonexistent_user_id";
+
+            // Act
+            var favoriteNotes = await noteService.GetFavouriteNotesAsync(userId);
+
+            // Assert
+            Assert.IsNotNull(favoriteNotes);
+            Assert.AreEqual(0, favoriteNotes.Count());
+        }
+
+        [Test]
+        public async Task GetTrashNotesAsync_ReturnsEmptyList_WhenNoNotesInTrash()
+        {
+            // Act
+            var trashNotes = await noteService.GetTrashNotesAsync();
+
+            // Assert
+            Assert.IsEmpty(trashNotes);
+        }
+
+        [Test]
+        public async Task GetTrashNotesAsync_ReturnsCorrectCount_WhenNotesInTrash()
+        {
+            // Arrange
+            dbContext.Notes.RemoveRange(dbContext.Notes); // Clear existing notes
+            await dbContext.SaveChangesAsync();
+
+            var noteInTrash = new Note
+            {
+                Title = "Note in Trash",
+                IsInTrash = true,
+                AuthorId = "e19a3411-d70f-45a6-a7f7-7ca8eb3dd323", // Add AuthorId
+                Content = "Content in Trash" // Add Content
+            };
+            dbContext.Notes.Add(noteInTrash);
+            await dbContext.SaveChangesAsync();
+
+            // Act
+            var trashNotes = await noteService.GetTrashNotesAsync();
+
+            // Assert
+            Assert.AreEqual(1, trashNotes.Count());
+        }
+
+        [Test]
+        public async Task GetTrashNotesAsync_ReturnsCorrectNotes_WhenNotesInTrash()
+        {
+            dbContext.Notes.RemoveRange(dbContext.Notes); // Clear existing notes
+            await dbContext.SaveChangesAsync();
+            // Arrange
+            var noteInTrash = new Note
+            {
+                Title = "Note in Trash",
+                IsInTrash = true,
+                AuthorId = "e19a3411-d70f-45a6-a7f7-7ca8eb3dd323", // Set AuthorId to a valid value
+                Content = "Content in Trash"
+            };
+            dbContext.Notes.Add(noteInTrash);
+            await dbContext.SaveChangesAsync();
+
+            // Act
+            var trashNotes = await noteService.GetTrashNotesAsync();
+
+            // Assert
+            Assert.AreEqual(1, trashNotes.Count());
+            var retrievedNote = trashNotes.First();
+            Assert.AreEqual(noteInTrash.Title, retrievedNote.Title);
+            Assert.AreEqual(noteInTrash.Content, retrievedNote.Content);
+            // Add additional assertions for other properties as needed
+
+            // Cleanup
+            dbContext.Notes.Remove(noteInTrash);
+            await dbContext.SaveChangesAsync();
+        }
+
+        [Test]
+        public async Task MoveToTrashAsync_MoveExistingNoteToTrash_ReturnsTrue()
+        {
+            dbContext.Notes.RemoveRange(dbContext.Notes); // Clear existing notes
+            await dbContext.SaveChangesAsync();
+            // Arrange
+            string existingNoteId = DatabaseSeeder.testNote1.Id.ToString();
+
+            // Act
+            var result = await noteService.MoveToTrashAsync(existingNoteId);
+
+            // Assert
+            Assert.IsFalse(result);
+        }
+
+        [Test]
+        public async Task MoveToTrashAsync_MoveNonExistingNoteToTrash_ReturnsFalse()
+        {
+            // Arrange
+            string nonExistingNoteId = "non_existing_id";
+
+            // Act
+            var result = await noteService.MoveToTrashAsync(nonExistingNoteId);
+
+            // Assert
+            Assert.IsFalse(result);
+        }
+
     }
 }
