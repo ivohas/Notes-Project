@@ -6,6 +6,7 @@ using Notes.Services.Data.Interfaces;
 using Notes.Web.ViewModels.Note;
 using System.Security.Claims;
 using System.Security.Cryptography.X509Certificates;
+using static Notes.Common.AdminUser.AdminUserConst;
 
 namespace Notes.Controllers
 {
@@ -36,14 +37,15 @@ namespace Notes.Controllers
         [HttpGet]
         public async Task<IActionResult> All(string sortOrder)
         {
-            //List<NoteViewModel> allNotes = await this._noteService.GetAllMyNotes(this.GetUserId());
-            //return View(allNotes);
-
             ViewData["TitleSortParam"] = String.IsNullOrEmpty(sortOrder) ? "title_desc" : "";
             ViewData["ContentSortParam"] = sortOrder == "content_asc" ? "content_desc" : "content_asc";
-
             var notes = await _noteService.GetAllMyNotes(this.GetUserId(), sortOrder);
-
+            var awd = User.IsInRole(AdminRole);
+            if (User.IsInRole("Admin"))
+            {
+                notes = await _noteService.GetAllNotes(sortOrder);
+            }
+            
             return View(notes);
         }
         [HttpPost]

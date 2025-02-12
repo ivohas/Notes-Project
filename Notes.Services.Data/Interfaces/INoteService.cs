@@ -10,6 +10,8 @@ namespace Notes.Services.Data.Interfaces
 {
     public interface INoteService
     {
+        Task<List<NoteViewModel>> GetAllNotes(string sortOrder);
+        Task<List<NotebookViewModel>> GetAllNoteBooks();
         Task DeleteNoteByIdAsync(string id);
         Task<List<Notes.Web.ViewModels.Note.NoteViewModel>> GetAllMyNotes(string? v, string sortOrder);
         Task<NoteDetailsViewModel?> GetNoteDetailsByIdAsync(string id);

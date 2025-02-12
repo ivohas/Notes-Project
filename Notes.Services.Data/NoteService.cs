@@ -126,6 +126,28 @@ namespace Notes.Services.Data
             await this._dbContext.SaveChangesAsync();
         }
 
+        public async Task<List<NotebookViewModel>> GetAllNoteBooks() {
+
+            var myNotebooks = await _dbContext
+               .Notebooks              
+               .Select(x => new NotebookViewModel
+               {
+                   Id = x.Id.ToString(),
+                   Description = x.Description,
+                   Title = x.Title,
+                   Notes = x.Notes.Select(x => new NoteViewModel
+                   {
+                       Id = x.Id.ToString(),
+                       Content = x.Content,
+                       Title = x.Title,
+                       CreatedOn = x.CreatedOn,
+                   }).ToList()
+               })
+               .ToListAsync();
+
+            return myNotebooks;
+        }
+
         public async Task<List<NotebookViewModel>> GetAllMyNotebooks(string? v)
         {
             if (v == null)
@@ -154,19 +176,10 @@ namespace Notes.Services.Data
             return myNotebooks;
         }
 
+
+
         public async Task<List<NoteViewModel>> GetAllMyNotes(string userId, string sortOrder)
-        {
-            //var myNotes = await _dbContext
-            //    .Notes
-            //    .Where(x => x.AuthorId == userId && x.IsInTrash == false)
-            //    .Select(x => new NoteViewModel
-            //    {
-            //        Id = x.Id.ToString(),
-            //        Title = x.Title,
-            //        CreatedOn = DateTime.Now,
-            //        Content = x.Content
-            //    }).ToListAsync();
-            //return myNotes;
+        {  
 
             IQueryable<Note> notesQuery = this._dbContext
                 .Notes
@@ -344,7 +357,46 @@ namespace Notes.Services.Data
 
         }
 
+        public async Task<List<NoteViewModel>> GetAllNotes(string sortOrder)
+        {
+            IQueryable<Note> notesQuery = this._dbContext
+               .Notes
+               .AsQueryable();
 
+            switch (sortOrder)
+            {
+                case "title_desc":
+                    notesQuery = notesQuery.OrderByDescending(n => n.Title);
+                    break;
+                case "content_asc":
+                    notesQuery = notesQuery.OrderBy(n => n.Content);
+                    break;
+                case "content_desc":
+                    notesQuery = notesQuery.OrderByDescending(n => n.Content);
+                    break;
+                case "date_desc":
+                    notesQuery = notesQuery.OrderByDescending(n => n.CreatedOn);
+                    break;
+                case "date_asc":
+                    notesQuery = notesQuery.OrderBy(n => n.CreatedOn);
+                    break;
+                default:
+                    notesQuery = notesQuery.OrderBy(n => n.Title);
+                    break;
+            }
+
+            var myNotes = await notesQuery
+                .Where(x => x.IsInTrash == false)
+                .Select(x => new NoteViewModel
+                {
+                    Id = x.Id.ToString(),
+                    Title = x.Title,
+                    CreatedOn = DateTime.Now,
+                    Content = x.Content
+                }).ToListAsync();
+
+            return myNotes;
+        }
     }
 
 }

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "LlWPjy3TL7j5hodRmNBbiWKCwQ/gn285IYOzigHCoktJ8SveX0xUmeFZFf+wYHNtiPOMUUlyU8NS548QoHIprw==",
+  "dgSpecHash": "5HfF3ePuBw+EyM8+7toTDxjZy86nN/3r6xdwWJtnWW8Qqqg8ZiN141fTeBSSzRd3zMvJnRv1eXORPmtQUp1lrw==",
   "success": true,
-  "projectFilePath": "D:\\Desktop\\aaaaaaaaaaaa\\Notes-Project\\Notes.Data.Models\\Notes.Data.Models.csproj",
+  "projectFilePath": "D:\\Desktop\\Notes-Project-main\\Notes-Project-main\\Notes.Data.Models\\Notes.Data.Models.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Iliyan\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\6.0.23\\microsoft.aspnetcore.cryptography.internal.6.0.23.nupkg.sha512",
     "C:\\Users\\Iliyan\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\6.0.23\\microsoft.aspnetcore.cryptography.keyderivation.6.0.23.nupkg.sha512",

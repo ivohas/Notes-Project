@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "x2jRz+eC8QoVCFbTEMmql14jNjdORm1liyYZwBT7I2+pclyZQGt5lPskr03jh0ITCbSMnuxITFOe08fK8G6zKA==",
+  "dgSpecHash": "aGK43ME3G0uOFxHHJHzKj+XGjq8rfZsI2759Y9HL1vnbClz2ryvZL3GIjOIvr6iNnwwNYuvAZsRGl/o3gotX1Q==",
   "success": true,
-  "projectFilePath": "D:\\Desktop\\aaaaaaaaaaaa\\Notes-Project\\Notes\\Notes.csproj",
+  "projectFilePath": "D:\\Desktop\\Notes-Project-main\\Notes-Project-main\\Notes\\Notes.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Iliyan\\.nuget\\packages\\humanizer\\2.14.1\\humanizer.2.14.1.nupkg.sha512",
     "C:\\Users\\Iliyan\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",

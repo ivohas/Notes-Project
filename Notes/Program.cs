@@ -22,7 +22,9 @@ namespace Note
             {
                 options.SignIn.RequireConfirmedAccount = false;
             })
+            .AddRoles<IdentityRole>()
                 .AddEntityFrameworkStores<NoteDbContext>();
+
             builder.Services.AddControllersWithViews();
 
             builder.Services.AddScoped<INoteService, NoteService>();
