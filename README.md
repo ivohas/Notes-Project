@@ -72,7 +72,7 @@ Both authors collaborated on all aspects of the project, with specific focus are
 - Documentation and presentation
 
 ## License
-[Specify License - e.g., MIT, Apache, etc.]
+[MIT]
 
 ## Acknowledgments
 A project developed as part of the "IT Career" educational initiative.
